@@ -1,6 +1,6 @@
 " Author: Yash Diniz <yashdiniz@gmail.com>
 " https://blog.jez.io/vim-as-an-ide/
-set nocompatible	" http://stackoverflow.com/questions/5845557/ddg#5845583 , apparently default now :)
+" set nocompatible	" http://stackoverflow.com/questions/5845557/ddg#5845583 , apparently default now :)
 
 " Setting up requirements for Vundle.
 filetype off	" temporarily turn off filetype
@@ -39,10 +39,18 @@ set showcmd
 set incsearch
 set hlsearch
 set colorcolumn=100	" highlight column 100 for right margin awareness
+set cmdheight = 3	" Give more height for command output space
 set laststatus=2	" Always show statusbar
 
+if has("patch-8.1.1564")
+  " Recently vim can merge signcolumn and number column into one
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif
+
 " turning on syntax highlighting
-syntax on
+" syntax on	" apparently default now :)
 
 " setting up mouse input for vim
 set mouse=a
