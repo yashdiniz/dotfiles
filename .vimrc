@@ -19,12 +19,16 @@ Plugin 'vim-airline/vim-airline'	"
 
 " Working with Git
 Plugin 'airblade/vim-gitgutter'		" 
-Plugin 'tpope/vim-fugitive'		" 
+Plugin 'tpope/vim-fugitive'		    " 
 
 " Other text editing features
 Plugin 'Raimondi/delimitMate'		" Automatic delimiter
+Plugin 'mbbill/undotree'		    " 
+Plugin 'tpope/vim-markdown'		    " Syntax completion and highlighting, markdown
+Plugin 'tpope/vim-commentary'		" toggling comments
 
 " tmux
+Plugin 'kien/ctrlp.vim'			        " Fuzzy find
 Plugin 'christoomey/vim-tmux-navigator'	" 
 
 call vundle#end()
@@ -38,9 +42,30 @@ set number
 set showcmd
 set incsearch
 set hlsearch
+set autoindent
+set smartindent
+set expandtab		" use spaces instead of tabs
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set shiftround
+set smarttab		" uses tabstops for indentation (smart bksp for spaces as tabs)
+set rnu			    " shows relative line number in the gutter
+set noshowmode		" do not show INSERT, VISUAL, etc since vim-airline already does
 set colorcolumn=100	" highlight column 100 for right margin awareness
-set cmdheight = 3	" Give more height for command output space
+set cmdheight=3		" Give more height for command output space
 set laststatus=2	" Always show statusbar
+
+set autoread
+
+" no need of backups since we have git
+set nobackup
+set nowritebackup
+set noswapfile		" we have >4G RAM anyway
+
+" enter command mode without needing to press shift+;
+nnoremap ; :
+vnoremap ; :
 
 if has("patch-8.1.1564")
   " Recently vim can merge signcolumn and number column into one
@@ -81,3 +106,10 @@ augroup mydelimitMate
   au FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
 augroup END
 
+" --- mbbill/undotree settings
+" Setup \u for showing undo tree
+nmap <silent> <leader>u :UndotreeToggle<CR>
+
+" --- tpope/vim-commentary settings
+" Toggle comments on <C-/>
+nnoremap <C-/> :CommentaryLine<CR>
