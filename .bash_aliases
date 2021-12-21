@@ -2,4 +2,4 @@
 alias spyke="cd ~/Desktop/spyke"
 alias s-na="cd ~/Desktop/spyke/Spyke-FrontEnd"
 alias s-ar="cd ~/Desktop/spyke/architecture-notes"
-
+alias s-im="cd ~/Desktop/spyke/imgur-test"
