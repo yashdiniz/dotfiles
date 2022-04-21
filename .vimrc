@@ -15,11 +15,11 @@ Plugin 'scrooloose/nerdtree'		" https://github.com/scrooloose/nerdtree
 Plugin 'jistr/vim-nerdtree-tabs'	" https://github.com/jistr/vim-nerdtree-tabs
 
 " Making vim look good
-Plugin 'vim-airline/vim-airline'	" 
+Plugin 'vim-airline/vim-airline'	" https://github.com/vim-airline/vim-airline
 
 " Working with Git
-Plugin 'airblade/vim-gitgutter'		" 
-Plugin 'tpope/vim-fugitive'		    " 
+Plugin 'airblade/vim-gitgutter'		" shows line changed by adding symbol in gutter.
+Plugin 'tpope/vim-fugitive'		    " git wrapper (https://github.com/tpope/vim-fugitive)
 
 " Other text editing features
 Plugin 'Raimondi/delimitMate'		" Automatic delimiter
@@ -31,12 +31,18 @@ Plugin 'tpope/vim-commentary'		" toggling comments
 Plugin 'kien/ctrlp.vim'			        " Fuzzy find
 Plugin 'christoomey/vim-tmux-navigator'	" 
 
+" golang!
+Plugin 'fatih/vim-go'               " https://github.com/fatih/vim-go
+
+" GitHub copilot
+Plugin 'github/copilot.vim'         " https://github.com/github/copilot.vim
+
 call vundle#end()
 
 filetype plugin indent on	" turn filetype back on
 
 " General settings
-set backspace=indent,eol,start
+set backspace=indent,eol,start  " pressing backspace will fix indent!
 set ruler
 set number
 set showcmd
