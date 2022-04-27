@@ -7,4 +7,6 @@ ln -s ~/linux-customizations/.vimrc ~/.config/nvim/init.vim
 mkdir -p ~/.config/nvim/bundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vundle.vim
 
-# cp ~/linux-customizations/.vimrc ~/.config/nvim/init.vim
+# installing alacritty
+git clone https://github.com/alacritty/alacritty.git
+
