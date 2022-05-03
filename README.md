@@ -1,5 +1,7 @@
 # Linux customizations
 
+Make sure to setup `nvim` 6.x or better. Also make sure to have `tmux` installed.
+
 ``` bash
 nvim +PluginInstall
 ```
