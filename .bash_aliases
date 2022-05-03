@@ -1,5 +1,6 @@
 # aliases for terminal convenience
 alias ga="git add"
+alias tmux="tmux -u"
 
 # aliases to work folders (for yash@yash-IdeaPad-5-15ITL05)
 alias s="cd ~/spyke"
