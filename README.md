@@ -1,7 +1,7 @@
 # Linux customizations
 
 ``` bash
-vim +PluginInstall
+nvim +PluginInstall
 ```
 
 ## References

@@ -28,7 +28,7 @@ Plugin 'tpope/vim-markdown'		    " Syntax completion and highlighting, markdown
 Plugin 'tpope/vim-commentary'		" toggling comments
 
 " tmux
-Plugin 'kien/ctrlp.vim'			        " Fuzzy find
+Plugin 'kien/ctrlp.vim'			        " Fuzzy find(using C-p for fuzzy file search)
 Plugin 'christoomey/vim-tmux-navigator'	" 
 
 " golang!
