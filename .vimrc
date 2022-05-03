@@ -1,5 +1,4 @@
 " Author: Yash Diniz <yashdiniz@gmail.com>
-" https://blog.jez.io/vim-as-an-ide/
 " set nocompatible	" http://stackoverflow.com/questions/5845557/ddg#5845583 , apparently default now :)
 
 " Setting up requirements for Vundle.
@@ -27,6 +26,13 @@ Plugin 'mbbill/undotree'		    "
 Plugin 'tpope/vim-markdown'		    " Syntax completion and highlighting, markdown
 Plugin 'tpope/vim-commentary'		" toggling comments
 
+" syntax highlighting
+Plugin 'elixir-lang/vim-elixir'         " using elixir
+
+" setting up fzf for vim
+Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plugin 'junegunn/fzf.vim'
+
 " tmux
 Plugin 'kien/ctrlp.vim'			        " Fuzzy find(using C-p for fuzzy file search)
 Plugin 'christoomey/vim-tmux-navigator'	" 
@@ -41,15 +47,20 @@ call vundle#end()
 
 filetype plugin indent on	" turn filetype back on
 
-" General settings
+""""""""""""""""""""""""""
+" --- General settings ---
+""""""""""""""""""""""""""
+
 set backspace=indent,eol,start  " pressing backspace will fix indent!
 set ruler
 set number
 set showcmd
 set incsearch
 set hlsearch
-set autoindent
-set smartindent
+
+set ai              " auto indent
+set si              " smart indent
+
 set expandtab		" use spaces instead of tabs
 set tabstop=4
 set shiftwidth=4
@@ -62,16 +73,15 @@ set colorcolumn=100	" highlight column 100 for right margin awareness
 set cmdheight=3		" Give more height for command output space
 set laststatus=2	" Always show statusbar
 
-set autoread
+set autoread        " automatically reflect changes if file updates externally
 
 " no need of backups since we have git
 set nobackup
 set nowritebackup
 set noswapfile		" we have >4G RAM anyway
 
-" enter command mode without needing to press shift+;
-nnoremap ; :
-vnoremap ; :
+" setting up mouse input for vim
+set mouse=a
 
 if has("patch-8.1.1564")
   " Recently vim can merge signcolumn and number column into one
@@ -80,19 +90,53 @@ else
   set signcolumn=yes
 endif
 
+""""""""""""""""""""""""""""
+" --- Custom Keybindings ---
+""""""""""""""""""""""""""""
+
+let mapleader=","   " setting comma as leader instead of \
+
+" enter command mode without needing to press shift+;
+nnoremap ; :
+vnoremap ; :
+" move vertically by visual line (don't skip wrapped lines) 
+nnoremap j gj
+nnoremap k gk
+
+" search all files with ,-p (fzf.vim)
+nnoremap <leader>p :Files<CR>
+
+" search git commits with ,-c (fzf.vim)
+nnoremap <leader>c :Commits<CR>
+
+" search within files and code (using ripgrep) ,-f (fzf.vim)
+nnoremap <Leader>f :Rg<CR>
+
 " turning on syntax highlighting
 " syntax on	" apparently default now :)
 
-" setting up mouse input for vim
-set mouse=a
+""""""""""""""""""""
+" --- File types ---
+""""""""""""""""""""
 
-" ----- Plugin Settings -----
+" recognize .md files as markdown files
+au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
+
+" enable spell-checking for markdown files
+autocmd BufRead,BufNewFile *.md setlocal spell
+
+"""""""""""""""""""""""""
+" --- Plugin Settings ---
+"""""""""""""""""""""""""
+
+" show hidden files
+let NERDTreeShowHidden=1
 
 " --- vim-airline/vim-airline
 let g:airline_detect_paste=1	" Show PASTE if in paste mode
 let g:airline#extensions#tabline#enabled = 1	" Show airline for tabs too
 
-" --- jistr/vim-nerdtree-tabs
+" --- jistr/vim-nerdtree-tabs and nerdtree
 " Allow open/close NERDtree Tabs with \t
 nmap <silent> <leader>t :NERDTreeTabsToggle<CR>
 "  To have NERDtree open at startup
