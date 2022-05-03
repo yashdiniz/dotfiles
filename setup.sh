@@ -2,6 +2,8 @@
 ln -s ~/linux-customizations/.bash_aliases ~/
 # add .vimrc to the home directory, where it shoudld be.
 ln -s ~/linux-customizations/.vimrc ~/.config/nvim/init.vim
+# add .tmux.conf to the home directory, where it should be.
+ln -s ~/linux-customizations/.tmux.conf ~/.tmux.conf
 
 # adding vundle to neovim
 mkdir -p ~/.config/nvim/bundle
