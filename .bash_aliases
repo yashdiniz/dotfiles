@@ -1,5 +1,6 @@
 # aliases for terminal convenience
 alias ga="git add"
+alias gc="git commit"
 alias tmux="tmux -u"
 
 # aliases to work folders (for yash@yash-IdeaPad-5-15ITL05)
