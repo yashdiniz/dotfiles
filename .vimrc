@@ -1,4 +1,4 @@
-" Author: Yash Diniz <yashdiniz@gmail.com>
+" Author: Yash Diniz 
 " set nocompatible	" http://stackoverflow.com/questions/5845557/ddg#5845583 , apparently default now :)
 
 " Setting up requirements for Vundle.
@@ -10,8 +10,8 @@ call vundle#begin('~/.config/nvim/bundle')
 Plugin 'VundleVim/Vundle.vim'	" https://github.com/gmarik/vundle
 
 " Installing NERDtree to help me out!
-Plugin 'scrooloose/nerdtree'		" https://github.com/scrooloose/nerdtree
-Plugin 'jistr/vim-nerdtree-tabs'	" https://github.com/jistr/vim-nerdtree-tabs
+" Plugin 'scrooloose/nerdtree'		" https://github.com/scrooloose/nerdtree
+" Plugin 'jistr/vim-nerdtree-tabs'	" https://github.com/jistr/vim-nerdtree-tabs
 
 " Making vim look good
 Plugin 'vim-airline/vim-airline'	" https://github.com/vim-airline/vim-airline
@@ -112,6 +112,9 @@ nnoremap <leader>c :Commits<CR>
 " search within files and code (using ripgrep) ,-f (fzf.vim)
 nnoremap <Leader>f :Rg<CR>
 
+" Open netRW with ,-t
+nnoremap <Leader>t :Explore<CR>
+
 " turning on syntax highlighting
 " syntax on	" apparently default now :)
 
@@ -129,8 +132,11 @@ autocmd BufRead,BufNewFile *.md setlocal spell
 " --- Plugin Settings ---
 """""""""""""""""""""""""
 
+" using netrw (inbuilt) for interactive file tree
+let g:netrw_liststyle = 3
+
 " show hidden files
-let NERDTreeShowHidden=1
+" let NERDTreeShowHidden=1
 
 " --- vim-airline/vim-airline
 let g:airline_detect_paste=1	" Show PASTE if in paste mode
@@ -138,9 +144,9 @@ let g:airline#extensions#tabline#enabled = 1	" Show airline for tabs too
 
 " --- jistr/vim-nerdtree-tabs and nerdtree
 " Allow open/close NERDtree Tabs with \t
-nmap <silent> <leader>t :NERDTreeTabsToggle<CR>
+" nmap <silent> <leader>t :NERDTreeTabsToggle<CR>
 "  To have NERDtree open at startup
-let g:nerdtree_tabs_open_on_console_startup = 1
+" let g:nerdtree_tabs_open_on_console_startup = 1
 
 " --- airblade/vim-gitgutter settings
 " In vim-airline, only display "hunks" if the diff is non-zero
