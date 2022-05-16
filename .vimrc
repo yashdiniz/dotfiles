@@ -99,6 +99,8 @@ let mapleader=","   " setting comma as leader instead of \
 " enter command mode without needing to press shift+;
 nnoremap ; :
 vnoremap ; :
+nnoremap : :!
+vnoremap : :!
 " move vertically by visual line (don't skip wrapped lines) 
 nnoremap j gj
 nnoremap k gk
@@ -114,6 +116,12 @@ nnoremap <Leader>f :Rg<CR>
 
 " Open netRW with ,-t
 nnoremap <Leader>t :Explore<CR>
+
+" Go hotkeys
+" Get the Go definition (vim-go)
+nnoremap <Leader>' :GoDef<CR>
+" Get the Go declaration (vim-go)
+nnoremap <Leader>" :GoDecls<CR>
 
 " turning on syntax highlighting
 " syntax on	" apparently default now :)
