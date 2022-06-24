@@ -95,6 +95,7 @@ endif
 """"""""""""""""""""""""""""
 
 let mapleader=","   " setting comma as leader instead of \
+let g:mapleader=','
 
 " enter command mode without needing to press shift+;
 nnoremap ; :
@@ -125,6 +126,13 @@ nnoremap <Leader>" :GoDecls<CR>
 
 " turning on syntax highlighting
 " syntax on	" apparently default now :)
+
+" When in diff mode (nvim -d)
+if &diff
+    map <leader>1 :diffget LOCAL<CR>
+    map <leader>2 :diffget BASE<CR>
+    map <leader>3 :diffget REMOTE<CR>
+endif
 
 """"""""""""""""""""
 " --- File types ---
