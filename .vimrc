@@ -128,6 +128,7 @@ nnoremap <Leader>" :GoDecls<CR>
 " syntax on	" apparently default now :)
 
 " When in diff mode (nvim -d)
+" https://gist.github.com/karenyyng/f19ff75c60f18b4b8149?permalink_comment_id=2123915#gistcomment-2123915
 if &diff
     map <leader>1 :diffget LOCAL<CR>
     map <leader>2 :diffget BASE<CR>
