@@ -3,7 +3,11 @@ alias ga="git add"
 alias gc="git commit -S"
 alias gd="git diff"
 alias tmux="tmux -u"
+
+# vim aliases to neovim
 alias vim="nvim"
+# https://stackoverflow.com/a/70584930/13227113
+alias vimdiff="nvim -d"
 
 # aliases to work folders (for yash@yash-IdeaPad-5-15ITL05)
 alias s="cd ~/spyke"
