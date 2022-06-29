@@ -152,18 +152,9 @@ autocmd BufRead,BufNewFile *.md setlocal spell
 " using netrw (inbuilt) for interactive file tree
 let g:netrw_liststyle = 3
 
-" show hidden files
-" let NERDTreeShowHidden=1
-
 " --- vim-airline/vim-airline
 let g:airline_detect_paste=1	" Show PASTE if in paste mode
 let g:airline#extensions#tabline#enabled = 1	" Show airline for tabs too
-
-" --- jistr/vim-nerdtree-tabs and nerdtree
-" Allow open/close NERDtree Tabs with \t
-" nmap <silent> <leader>t :NERDTreeTabsToggle<CR>
-"  To have NERDtree open at startup
-" let g:nerdtree_tabs_open_on_console_startup = 1
 
 " --- airblade/vim-gitgutter settings
 " In vim-airline, only display "hunks" if the diff is non-zero
@@ -185,4 +176,4 @@ nmap <silent> <leader>u :UndotreeToggle<CR>
 
 " --- tpope/vim-commentary settings
 " Toggle comments on <C-/>
-nnoremap <C-/> :CommentaryLine<CR>
+nnoremap <C-/> :Commentary<CR>
