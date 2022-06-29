@@ -108,24 +108,24 @@ nnoremap <leader>p :Files<CR>
 nnoremap <leader>c :Commits<CR>
 
 " search within files and code (using ripgrep) ,-f (fzf.vim)
-nnoremap <Leader>f :Rg<CR>
+nnoremap <leader>f :Rg<CR>
 
 " Open netRW with ,-t
-nnoremap <Leader>t :Explore<CR>
+nnoremap <leader>t :Explore<CR>
 
 " --- fatih/vim-go settings
 " Get the Go definition
-nnoremap <Leader>d :GoDef<CR>
+nnoremap <leader>d :GoDef<CR>
 " Get the Go declaration
-nnoremap <Leader>D :GoDecls<CR>
+nnoremap <leader>D :GoDecls<CR>
 
 " --- mbbill/undotree settings
-" Setup \u for showing undo tree
-nmap <silent> <leader>u ;UndotreeToggle<CR>
+" Setup ,u for showing undo tree
+nnoremap <leader>u :UndotreeToggle<CR>
 
 " --- tpope/vim-commentary settings
 " Toggle comments on <C-/>
-nnoremap <C-/> ;Commentary<CR>
+nmap <C-/> :Commentary<CR>
 
 " When in diff mode (nvim -d)
 " https://gist.github.com/karenyyng/f19ff75c60f18b4b8149?permalink_comment_id=2123915#gistcomment-2123915
