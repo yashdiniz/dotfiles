@@ -152,6 +152,10 @@ autocmd BufRead,BufNewFile *.md setlocal spell
 " using netrw (inbuilt) for interactive file tree
 let g:netrw_liststyle = 3
 
+" --- fatih/vim-go
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
+
 " --- vim-airline/vim-airline
 let g:airline_detect_paste=1	" Show PASTE if in paste mode
 let g:airline#extensions#tabline#enabled = 1	" Show airline for tabs too
