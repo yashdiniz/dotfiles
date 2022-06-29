@@ -35,6 +35,9 @@ Plugin 'christoomey/vim-tmux-navigator'	"
 " golang!
 Plugin 'fatih/vim-go'               " https://github.com/fatih/vim-go
 
+" autocomplete
+Plugin 'Shougo/deoplete.nvim'       " https://github.com/Shougo/deoplete.nvim
+
 " GitHub copilot
 Plugin 'github/copilot.vim'         " https://github.com/github/copilot.vim
 
@@ -151,6 +154,10 @@ autocmd BufRead,BufNewFile *.md setlocal spell
 
 " using netrw (inbuilt) for interactive file tree
 let g:netrw_liststyle = 3
+
+" --- Shougo/deoplete.nvim
+let g:deoplete#enable_at_startup = 1
+call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
 
 " --- fatih/vim-go
 " https://github.com/golang/tools/blob/master/gopls/doc/vim.md
