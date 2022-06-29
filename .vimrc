@@ -1,5 +1,4 @@
 " Author: Yash Diniz 
-" set nocompatible	" http://stackoverflow.com/questions/5845557/ddg#5845583 , apparently default now :)
 
 " Setting up requirements for Vundle.
 filetype off	" temporarily turn off filetype
@@ -8,10 +7,6 @@ set rtp+=~/.config/nvim/bundle/Vundle.vim
 call vundle#begin('~/.config/nvim/bundle')
 
 Plugin 'VundleVim/Vundle.vim'	" https://github.com/gmarik/vundle
-
-" Installing NERDtree to help me out!
-" Plugin 'scrooloose/nerdtree'		" https://github.com/scrooloose/nerdtree
-" Plugin 'jistr/vim-nerdtree-tabs'	" https://github.com/jistr/vim-nerdtree-tabs
 
 " Making vim look good
 Plugin 'vim-airline/vim-airline'	" https://github.com/vim-airline/vim-airline
@@ -118,14 +113,19 @@ nnoremap <Leader>f :Rg<CR>
 " Open netRW with ,-t
 nnoremap <Leader>t :Explore<CR>
 
-" Go hotkeys
-" Get the Go definition (vim-go)
-nnoremap <Leader>' :GoDef<CR>
-" Get the Go declaration (vim-go)
-nnoremap <Leader>" :GoDecls<CR>
+" --- fatih/vim-go settings
+" Get the Go definition
+nnoremap <Leader>d :GoDef<CR>
+" Get the Go declaration
+nnoremap <Leader>D :GoDecls<CR>
 
-" turning on syntax highlighting
-" syntax on	" apparently default now :)
+" --- mbbill/undotree settings
+" Setup \u for showing undo tree
+nmap <silent> <leader>u ;UndotreeToggle<CR>
+
+" --- tpope/vim-commentary settings
+" Toggle comments on <C-/>
+nnoremap <C-/> ;Commentary<CR>
 
 " When in diff mode (nvim -d)
 " https://gist.github.com/karenyyng/f19ff75c60f18b4b8149?permalink_comment_id=2123915#gistcomment-2123915
@@ -170,10 +170,3 @@ augroup mydelimitMate
   au FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
 augroup END
 
-" --- mbbill/undotree settings
-" Setup \u for showing undo tree
-nmap <silent> <leader>u :UndotreeToggle<CR>
-
-" --- tpope/vim-commentary settings
-" Toggle comments on <C-/>
-nnoremap <C-/> :Commentary<CR>
