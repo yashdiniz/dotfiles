@@ -153,6 +153,7 @@ autocmd BufRead,BufNewFile *.md setlocal spell
 let g:netrw_liststyle = 3
 
 " --- fatih/vim-go
+" https://github.com/golang/tools/blob/master/gopls/doc/vim.md
 let g:go_def_mode='gopls'
 let g:go_info_mode='gopls'
 
