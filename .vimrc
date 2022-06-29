@@ -29,7 +29,7 @@ Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plugin 'junegunn/fzf.vim'
 
 " tmux
-Plugin 'kien/ctrlp.vim'			        " Fuzzy find(using C-p for fuzzy file search)
+" Plugin 'kien/ctrlp.vim'			        " Fuzzy find(using C-p for fuzzy file search)
 Plugin 'christoomey/vim-tmux-navigator'	" 
 
 " golang!
