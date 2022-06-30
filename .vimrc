@@ -35,6 +35,12 @@ Plugin 'christoomey/vim-tmux-navigator'	"
 " golang!
 Plugin 'fatih/vim-go'               " https://github.com/fatih/vim-go
 
+" rust
+Plugin 'rust-lang/rust.vim'         " https://github.com/rust-lang/rust.vim
+
+" lint engines
+Plugin 'dense-analysis/ale'         " https://github.com/dense-analysis/ale
+
 " autocomplete
 Plugin 'Shougo/deoplete.nvim'       " https://github.com/Shougo/deoplete.nvim
 
@@ -157,7 +163,9 @@ let g:netrw_liststyle = 3
 
 " --- Shougo/deoplete.nvim
 let g:deoplete#enable_at_startup = 1
-call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
+call deoplete#custom#option('omni_patterns', { 
+            \    'go': '[^. *\t]\.\w*',
+            \ })
 
 " --- fatih/vim-go
 " https://github.com/golang/tools/blob/master/gopls/doc/vim.md
