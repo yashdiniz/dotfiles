@@ -73,7 +73,7 @@ set shiftround
 set smarttab		" uses tabstops for indentation (smart bksp for spaces as tabs)
 set rnu			    " shows relative line number in the gutter
 set noshowmode		" do not show INSERT, VISUAL, etc since vim-airline already does
-set colorcolumn=100	" highlight column 100 for right margin awareness
+set colorcolumn=120	" highlight column for right margin awareness
 set cmdheight=3		" Give more height for command output space
 set laststatus=2	" Always show statusbar
 
@@ -161,6 +161,9 @@ autocmd BufRead,BufNewFile *.md setlocal spell
 " using netrw (inbuilt) for interactive file tree
 let g:netrw_liststyle = 3
 
+" --- dense-analysis/ale
+let g:ale_linters = {'rust': ['analyzer']}
+
 " --- Shougo/deoplete.nvim
 let g:deoplete#enable_at_startup = 1
 call deoplete#custom#option('omni_patterns', { 
@@ -171,10 +174,16 @@ call deoplete#custom#option('omni_patterns', {
 " https://github.com/golang/tools/blob/master/gopls/doc/vim.md
 let g:go_def_mode='gopls'
 let g:go_info_mode='gopls'
+let g:go_auto_sameids = 1
 
 " --- vim-airline/vim-airline
 let g:airline_detect_paste=1	" Show PASTE if in paste mode
 let g:airline#extensions#tabline#enabled = 1	" Show airline for tabs too
+" Error and warning signs.
+let g:ale_sign_error = '⤫'
+let g:ale_sign_warning = '⚠'
+" Enable integration with airline.
+let g:airline#extensions#ale#enabled = 1
 
 " --- airblade/vim-gitgutter settings
 " In vim-airline, only display "hunks" if the diff is non-zero
