@@ -208,6 +208,7 @@ let g:coc_node_path = '/usr/bin/node'
 " call deoplete#custom#option('omni_patterns', { 
 "             \    'go': '[^. *\t]\.\w*',
 "             \ })
+" https://airton.dev/article/auto-complete-go-on-vim-using-coc/
 
 " --- fatih/vim-go
 " https://github.com/golang/tools/blob/master/gopls/doc/vim.md
