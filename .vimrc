@@ -1,53 +1,51 @@
 " Author: Yash Diniz 
 
 " Setting up requirements for Vundle.
-filetype off	" temporarily turn off filetype
-set rtp+=~/.config/nvim/bundle/Vundle.vim
+" filetype off	" temporarily turn off filetype
+" set rtp+=~/.config/nvim/bundle/Vundle.vim
 
-call vundle#begin('~/.config/nvim/bundle')
+call plug#begin()
 
-Plugin 'VundleVim/Vundle.vim'	" https://github.com/gmarik/vundle
+" Plug 'VundleVim/Vundle.vim'	" https://github.com/gmarik/vundle
 
-" Making vim look good
-Plugin 'vim-airline/vim-airline'	" https://github.com/vim-airline/vim-airline
+" make vim look good
+Plug 'vim-airline/vim-airline'
 
 " Working with Git
-Plugin 'airblade/vim-gitgutter'		" shows line changed by adding symbol in gutter.
-Plugin 'tpope/vim-fugitive'		    " git wrapper (https://github.com/tpope/vim-fugitive)
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
 
-" Other text editing features
-Plugin 'Raimondi/delimitMate'		" Automatic delimiter
-Plugin 'mbbill/undotree'		    " 
-Plugin 'tpope/vim-markdown'		    " Syntax completion and highlighting, markdown
-Plugin 'tpope/vim-commentary'		" toggling comments
+" Other text editing features (syntax highlighting, delimiter, comment toggling)
+Plug 'Raimondi/delimitMate'     " Automatic delimiter
+Plug 'mbbill/undotree'
+Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-commentary'
+Plug 'elixir-lang/vim-elixir'
 
-" syntax highlighting
-Plugin 'elixir-lang/vim-elixir'         " using elixir
-
-" setting up fzf for vim
-Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plugin 'junegunn/fzf.vim'
+" fzf!
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 " tmux
-" Plugin 'kien/ctrlp.vim'			        " Fuzzy find(using C-p for fuzzy file search)
-Plugin 'christoomey/vim-tmux-navigator'	" 
+" Plug 'kien/ctrlp.vim'			        " Fuzzy find(using C-p for fuzzy file search)
+Plug 'christoomey/vim-tmux-navigator'
 
-" golang!
-Plugin 'fatih/vim-go'               " https://github.com/fatih/vim-go
+" language extensions
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+Plug 'rust-lang/rust.vim'
 
-" rust
-Plugin 'rust-lang/rust.vim'         " https://github.com/rust-lang/rust.vim
-
-" lint engines
-Plugin 'dense-analysis/ale'         " https://github.com/dense-analysis/ale
+" linters
+Plug 'dense-analysis/ale'
 
 " autocomplete
-Plugin 'Shougo/deoplete.nvim'       " https://github.com/Shougo/deoplete.nvim
+" Plug 'Shougo/deoplete.nvim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
 " GitHub copilot
-Plugin 'github/copilot.vim'         " https://github.com/github/copilot.vim
+" Plug 'github/copilot.vim'
 
-call vundle#end()
+call plug#end()
 
 filetype plugin indent on	" turn filetype back on
 
@@ -83,6 +81,9 @@ set autoread        " automatically reflect changes if file updates externally
 set nobackup
 set nowritebackup
 set noswapfile		" we have >4G RAM anyway
+
+" reducing updatetime to reduce latency for a better UX
+set updatetime=300
 
 " setting up mouse input for vim
 set mouse=a
@@ -144,6 +145,8 @@ if &diff
     map <leader>3 :diffget REMOTE<CR>
 endif
 
+" TODO: add coc autocomplete configs
+
 """"""""""""""""""""
 " --- File types ---
 """"""""""""""""""""
@@ -164,11 +167,14 @@ let g:netrw_liststyle = 3
 " --- dense-analysis/ale
 let g:ale_linters = {'rust': ['analyzer']}
 
+" --- neoclide/coc.nvim
+let g:coc_node_path = '/usr/bin/node'
+
 " --- Shougo/deoplete.nvim
-let g:deoplete#enable_at_startup = 1
-call deoplete#custom#option('omni_patterns', { 
-            \    'go': '[^. *\t]\.\w*',
-            \ })
+" let g:deoplete#enable_at_startup = 1
+" call deoplete#custom#option('omni_patterns', { 
+"             \    'go': '[^. *\t]\.\w*',
+"             \ })
 
 " --- fatih/vim-go
 " https://github.com/golang/tools/blob/master/gopls/doc/vim.md
@@ -177,7 +183,7 @@ let g:go_info_mode='gopls'
 let g:go_auto_sameids = 1
 
 " --- vim-airline/vim-airline
-let g:airline_detect_paste=1	" Show PASTE if in paste mode
+let g:airline_detect_paste = 1	" Show PASTE if in paste mode
 let g:airline#extensions#tabline#enabled = 1	" Show airline for tabs too
 " Error and warning signs.
 let g:ale_sign_error = '⤫'

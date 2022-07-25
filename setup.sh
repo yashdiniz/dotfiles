@@ -11,9 +11,20 @@ mkdir -p ~/.config/alacritty
 ln -s ~/linux-customizations/alacritty.yml ~/.config/alacritty/alacritty.yml
 
 # adding vundle to neovim
-mkdir -p ~/.config/nvim/bundle
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vundle.vim
+# mkdir -p ~/.config/nvim/bundle
+# git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vundle.vim
+
+# adding vim-Plug to neovim
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim \
+    --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # installing alacritty
 git clone https://github.com/alacritty/alacritty.git
 
+# Install latest nodejs (required for coc.nvim)
+if [ ! -x "$(command -v node)" ]; then
+    curl --fail -LSs https://install-node.now.sh/latest | sh
+    export PATH="/usr/local/bin/:$PATH"
+    # Or use package manager, e.g.
+    # sudo apt-get install nodejs
+fi
