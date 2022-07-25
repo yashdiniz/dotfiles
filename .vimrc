@@ -40,10 +40,10 @@ Plug 'dense-analysis/ale'
 " autocomplete
 " Plug 'Shougo/deoplete.nvim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+" Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
 " GitHub copilot
-" Plug 'github/copilot.vim'
+Plug 'github/copilot.vim'
 
 call plug#end()
 
@@ -84,6 +84,9 @@ set noswapfile		" we have >4G RAM anyway
 
 " reducing updatetime to reduce latency for a better UX
 set updatetime=300
+
+" Don't pass messages to |ins-completion-menu|.
+set shortmess+=c
 
 " setting up mouse input for vim
 set mouse=a
@@ -135,7 +138,7 @@ nnoremap <leader>u :UndotreeToggle<CR>
 
 " --- tpope/vim-commentary settings
 " Toggle comments on <C-/>
-nmap <C-/> :Commentary<CR>
+nmap <C-/> :CommentaryLine<CR>
 
 " When in diff mode (nvim -d)
 " https://gist.github.com/karenyyng/f19ff75c60f18b4b8149?permalink_comment_id=2123915#gistcomment-2123915
@@ -145,7 +148,35 @@ if &diff
     map <leader>3 :diffget REMOTE<CR>
 endif
 
-" TODO: add coc autocomplete configs
+" --- github/copilot.vim settings
+" Preventing the default tab behaviour to allow for coc to work its autocomplete functionality.
+imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
+let g:copilot_no_tab_map = v:true
+
+" --- neoclide/coc.nvim settings
+" Use tab for trigger completion with characters ahead and navigate.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ CheckBackspace() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <c-space> to trigger completion.
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
+
+" Make <CR> auto-select the first completion item and notify coc.nvim to
+" format on enter, <cr> could be remapped by other vim plugin
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 """"""""""""""""""""
 " --- File types ---
