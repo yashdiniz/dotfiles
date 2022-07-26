@@ -115,8 +115,8 @@ nnoremap j gj
 nnoremap k gk
 
 " search git files with ,p and all files with ,P (fzf.vim)
-nnoremap <leader>P :Files<CR>
 nnoremap <leader>p :GFiles<CR>
+nnoremap <leader>P :Files<CR>
 
 " search git commits with ,c (fzf.vim)
 nnoremap <leader>c :Commits<CR>
