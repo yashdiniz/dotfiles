@@ -8,7 +8,7 @@ nvim +PlugInstall
 
 ## References
 
-1. [Vim as an IDE](https://blog.jez.io/vim-as-an-ide/)
+1. [Vim as a PDE](https://blog.jez.io/vim-as-an-ide/)
 1. [Vim netrw](https://shapeshed.com/vim-netrw/)
 1. [HamVocke's dotfiles - GitHub](https://github.com/hamvocke/dotfiles)
 1. [ThePrimagean's dotfiles - GitHub](https://github.com/ThePrimeagen/.dotfiles)
