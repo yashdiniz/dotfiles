@@ -10,6 +10,7 @@ call plug#begin()
 
 " make vim look good
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " Working with Git
 Plug 'airblade/vim-gitgutter'
@@ -201,6 +202,9 @@ let g:netrw_liststyle = 3
 
 " --- dense-analysis/ale
 let g:ale_linters = {'rust': ['analyzer']}
+" Error and warning signs.
+let g:ale_sign_error = '⤫'
+let g:ale_sign_warning = '⚠'
 
 " --- neoclide/coc.nvim
 let g:coc_node_path = '/usr/bin/node'
@@ -221,17 +225,32 @@ let g:go_auto_sameids = 1
 " --- vim-airline/vim-airline
 let g:airline_detect_paste = 1	" Show PASTE if in paste mode
 let g:airline#extensions#tabline#enabled = 1	" Show airline for tabs too
-" Error and warning signs.
-let g:ale_sign_error = '⤫'
-let g:ale_sign_warning = '⚠'
-" Enable integration with airline.
-let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#ale#enabled = 1    " Enable integration with airline.
 
-" --- airblade/vim-gitgutter settings
+" --- airblade/vim-gitgutter 
 " In vim-airline, only display "hunks" if the diff is non-zero
 let g:airline#extensions#hunks#non_zero_only = 1
 
-" --- Raimondi/delimitMate settings
+" --- vim-airline/vim-airline-themes
+let g:airline_theme = 'luna'
+let g:airline_powerline_fonts = 1
+if !exists('g:airline_symbols')
+  " let g:airline_symbols = {}
+  " let g:airline_left_sep = '»'
+  " let g:airline_left_sep = '▶'
+  " let g:airline_right_sep = '«'
+  " let g:airline_right_sep = '◀'
+  " let g:airline_symbols.linenr = '␊'
+  " let g:airline_symbols.linenr = '␤'
+  " let g:airline_symbols.linenr = '¶'
+  " let g:airline_symbols.branch = '⎇'
+  " let g:airline_symbols.paste = 'ρ'
+  " let g:airline_symbols.paste = 'Þ'
+  " let g:airline_symbols.paste = '∥'
+  " let g:airline_symbols.whitespace = 'Ξ'
+endif
+
+" --- Raimondi/delimitMate 
 let delimitMate_expand_cr = 1
 augroup mydelimitMate
   au!
