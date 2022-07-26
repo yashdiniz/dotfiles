@@ -114,16 +114,17 @@ vnoremap : :!
 nnoremap j gj
 nnoremap k gk
 
-" search all files with ,-p (fzf.vim)
-nnoremap <leader>p :Files<CR>
+" search git files with ,p and all files with ,P (fzf.vim)
+nnoremap <leader>P :Files<CR>
+nnoremap <leader>p :GFiles<CR>
 
-" search git commits with ,-c (fzf.vim)
+" search git commits with ,c (fzf.vim)
 nnoremap <leader>c :Commits<CR>
 
-" search within files and code (using ripgrep) ,-f (fzf.vim)
+" search within files and code (using ripgrep) ,f (fzf.vim)
 nnoremap <leader>f :Rg<CR>
 
-" Open netRW with ,-t
+" Open netRW with ,t
 nnoremap <leader>t :Explore<CR>
 
 " --- fatih/vim-go settings
@@ -138,7 +139,7 @@ nnoremap <leader>u :UndotreeToggle<CR>
 
 " --- tpope/vim-commentary settings
 " Toggle comments on <C-/>
-" use `<leader>gcc` to toggle comments on current line instead
+" use `,gcc` to toggle comments on current line instead
 " nmap <C-/> :CommentaryLine<CR>
 
 " When in diff mode (nvim -d)
