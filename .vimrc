@@ -138,7 +138,8 @@ nnoremap <leader>u :UndotreeToggle<CR>
 
 " --- tpope/vim-commentary settings
 " Toggle comments on <C-/>
-nmap <C-/> :CommentaryLine<CR>
+" use `<leader>gcc` to toggle comments on current line instead
+" nmap <C-/> :CommentaryLine<CR>
 
 " When in diff mode (nvim -d)
 " https://gist.github.com/karenyyng/f19ff75c60f18b4b8149?permalink_comment_id=2123915#gistcomment-2123915
