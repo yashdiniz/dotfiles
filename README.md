@@ -1,6 +1,7 @@
 # Linux customizations
 
-Make sure to setup `nvim` 0.6.x or better. Also make sure to have `tmux`, `ripgrep`, and `fzf` installed.
+Make sure to setup `nvim` 0.6.x or better. Also make sure to have `tmux`, `ripgrep`, `powerline-fonts` 
+and `fzf` installed.
 
 ``` bash
 nvim +PlugInstall
