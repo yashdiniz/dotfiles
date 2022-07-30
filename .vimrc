@@ -99,6 +99,11 @@ else
   set signcolumn=yes
 endif
 
+" if syntax highlighting inbuilt, enable it.
+if has("syntax")
+  syntax on
+endif
+
 """"""""""""""""""""""""""""
 " --- Custom Keybindings ---
 """"""""""""""""""""""""""""
@@ -115,8 +120,8 @@ vnoremap : :!
 nnoremap j gj
 nnoremap k gk
 
-" search git files with ,p and all files with ,P (fzf.vim)
-nnoremap <leader>p :GFiles<CR>
+" search git files with ,p (vim-fugitive) and all files with ,P (fzf.vim)
+nnoremap <leader>p :GitFiles<CR>
 nnoremap <leader>P :Files<CR>
 
 " search git commits with ,c (fzf.vim)
@@ -127,12 +132,6 @@ nnoremap <leader>f :Rg<CR>
 
 " Open netRW with ,t
 nnoremap <leader>t :Explore<CR>
-
-" --- fatih/vim-go settings
-" Get the Go definition
-nnoremap <leader>d :GoDef<CR>
-" Get the Go declaration
-nnoremap <leader>D :GoDecls<CR>
 
 " --- mbbill/undotree settings
 " Setup ,u for showing undo tree
