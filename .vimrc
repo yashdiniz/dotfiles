@@ -137,6 +137,11 @@ nnoremap <leader>t :Explore<CR>
 " Setup ,u for showing undo tree
 nnoremap <leader>u :UndotreeToggle<CR>
 
+" --- tpope/vim-fugitive settings
+cnoremap ga Git add 
+cnoremap gc Git commit -S<CR>
+cnoremap gd Git diff<CR>
+
 " --- tpope/vim-commentary settings
 " Toggle comments on <C-/>
 " use `,gcc` to toggle comments on current line instead
@@ -152,7 +157,7 @@ endif
 
 " --- github/copilot.vim settings
 " Preventing the default tab behaviour to allow for coc to work its autocomplete functionality.
-imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
+inoremap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
 let g:copilot_no_tab_map = v:true
 
 " --- neoclide/coc.nvim settings
