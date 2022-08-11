@@ -28,7 +28,6 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 " tmux
-" Plug 'kien/ctrlp.vim'			        " Fuzzy find(using C-p for fuzzy file search)
 Plug 'christoomey/vim-tmux-navigator'
 
 " language extensions
@@ -119,6 +118,10 @@ vnoremap : :!
 " move vertically by visual line (don't skip wrapped lines) 
 nnoremap j gj
 nnoremap k gk
+
+" buffer switching for vim-airline
+nnoremap <silent><leader>n :bnext<CR>
+nnoremap <silent><leader>x :bdelete<CR>
 
 " search git files with ,p (vim-fugitive) and all files with ,P (fzf.vim)
 nnoremap <leader>p :GitFiles<CR>
