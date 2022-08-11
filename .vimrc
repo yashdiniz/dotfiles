@@ -246,9 +246,11 @@ if !exists('g:airline_symbols') || g:airline_powerline_fonts == 1
   let g:airline_right_alt_sep = ''
   let g:airline_symbols.branch = ''
   let g:airline_symbols.readonly = ''
-  let g:airline_symbols.linenr = '☰'
+  let g:airline_symbols.linenr = 'l:' " '☰'
   let g:airline_symbols.maxlinenr = ''
-  let g:airline_symbols.dirty= '+'  " '⚡' 
+  let g:airline_symbols.colnr = 'c:'
+  let g:airline_symbols.crypt = ''
+  let g:airline_symbols.dirty= '⚡' 
 endif
 
 " --- Raimondi/delimitMate 
@@ -260,4 +262,3 @@ augroup mydelimitMate
   au FileType tex let b:delimitMate_matchpairs = "(:),[:],{:},`:'"
   au FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
 augroup END
-
