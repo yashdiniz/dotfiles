@@ -1,3 +1,6 @@
+# some cool widgets
+alias weather="curl https://wttr.in/?format=4"
+
 # aliases for terminal convenience
 alias ga="git add"
 alias gc="git commit -S"
