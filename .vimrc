@@ -120,7 +120,8 @@ nnoremap j gj
 nnoremap k gk
 
 " buffer switching for vim-airline
-nnoremap <silent><leader>n :bnext<CR>
+nnoremap <silent><leader>[ :bnext<CR>
+nnoremap <silent><leader>] :bprev<CR>
 nnoremap <silent><leader>x :bdelete<CR>
 
 " search git files with ,p (vim-fugitive) and all files with ,P (fzf.vim)
@@ -189,6 +190,7 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+" nnoremap <silent> gR <Plug>(coc-rename)
 
 """"""""""""""""""""
 " --- File types ---
