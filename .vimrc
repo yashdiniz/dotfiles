@@ -250,11 +250,11 @@ if !exists('g:airline_symbols') || g:airline_powerline_fonts == 1
   let g:airline_right_sep = ''
   let g:airline_right_alt_sep = ''
   let g:airline_symbols.branch = ''
-  let g:airline_symbols.readonly = ''
+  let g:airline_symbols.readonly = '🔒' " ''
   let g:airline_symbols.linenr = 'l:' " '☰'
   let g:airline_symbols.maxlinenr = ''
   let g:airline_symbols.colnr = 'c:'
-  let g:airline_symbols.crypt = ''
+  let g:airline_symbols.crypt = '🔒' " ''
   let g:airline_symbols.dirty= '⚡' 
 endif
 
