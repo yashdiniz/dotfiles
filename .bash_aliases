@@ -19,7 +19,5 @@ alias s-na="cd ~/spyke/Spyke-FrontEnd"
 alias s-ar="cd ~/spyke/architecture-notes"
 alias s-ga="cd ~/spyke/spyke-gateway"
 
-# aliases to work folders (for yash@yash-HP-Laptop-15s-eq2xxx)
-# alias mrinq="cd ~/mrinq"
-# alias m-im="cd ~/mrinq/misc-IM"
-
+# personal stuff
+alias blog="cd ~/personal/yashdiniz.github.io"
