@@ -113,9 +113,11 @@ let g:mapleader=','
 " When in diff mode (nvim -d)
 " https://gist.github.com/karenyyng/f19ff75c60f18b4b8149?permalink_comment_id=2123915#gistcomment-2123915
 if &diff
-    map <leader>1 :diffget LOCAL<CR>
-    map <leader>2 :diffget BASE<CR>
-    map <leader>3 :diffget REMOTE<CR>
+    let g:diff_translations = 0
+    set syntax=diff
+    nnoremap <leader>1 :diffget LOCAL<CR>
+    nnoremap <leader>2 :diffget BASE<CR>
+    nnoremap <leader>3 :diffget REMOTE<CR>
 endif
 
 " enter command mode without needing to press shift+;
