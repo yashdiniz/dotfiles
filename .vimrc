@@ -110,6 +110,14 @@ endif
 let mapleader=","   " setting comma as leader instead of \
 let g:mapleader=','
 
+" When in diff mode (nvim -d)
+" https://gist.github.com/karenyyng/f19ff75c60f18b4b8149?permalink_comment_id=2123915#gistcomment-2123915
+if &diff
+    map <leader>1 :diffget LOCAL<CR>
+    map <leader>2 :diffget BASE<CR>
+    map <leader>3 :diffget REMOTE<CR>
+endif
+
 " enter command mode without needing to press shift+;
 nnoremap ; :
 vnoremap ; :
@@ -150,14 +158,6 @@ cnoremap gd Git diff<CR>
 " Toggle comments on <C-/>
 " use `,gcc` to toggle comments on current line instead
 " nmap <C-/> :CommentaryLine<CR>
-
-" When in diff mode (nvim -d)
-" https://gist.github.com/karenyyng/f19ff75c60f18b4b8149?permalink_comment_id=2123915#gistcomment-2123915
-if &diff
-    map <leader>1 :diffget LOCAL<CR>
-    map <leader>2 :diffget BASE<CR>
-    map <leader>3 :diffget REMOTE<CR>
-endif
 
 " --- github/copilot.vim settings
 " Preventing the default tab behaviour to allow for coc to work its autocomplete functionality.
