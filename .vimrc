@@ -115,9 +115,11 @@ let g:mapleader=','
 if &diff
     let g:diff_translations = 0
     set syntax=diff
-    nnoremap <leader>1 :diffget LOCAL<CR>
-    nnoremap <leader>2 :diffget BASE<CR>
-    nnoremap <leader>3 :diffget REMOTE<CR>
+    " http://vimcasts.org/episodes/fugitive-vim-resolving-merge-conflicts-with-vimdiff/
+    " :Gdiffsplit for three way merge, 
+    " with dp as key binding to transfer the preferred hunk to working copy. 
+    " Use [c or ]c to jump between hunks, and
+    " :only or :Gwrite[!] to finally show the working copy!
 endif
 
 " enter command mode without needing to press shift+;
