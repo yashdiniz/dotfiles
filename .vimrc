@@ -15,6 +15,7 @@ Plug 'vim-airline/vim-airline-themes'
 " Working with Git
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 
 " Other text editing features (syntax highlighting, delimiter, comment toggling)
 Plug 'Raimondi/delimitMate'     " Automatic delimiter
