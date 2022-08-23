@@ -43,8 +43,8 @@ Plug 'dense-analysis/ale'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
-" GitHub copilot
-Plug 'github/copilot.vim'
+" GitHub copilot (disabling because trial ended)
+" Plug 'github/copilot.vim'
 
 call plug#end()
 
@@ -166,8 +166,8 @@ cnoremap gd Git diff<CR>
 
 " --- github/copilot.vim settings
 " Preventing the default tab behaviour to allow for coc to work its autocomplete functionality.
-inoremap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
-let g:copilot_no_tab_map = v:true
+" inoremap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
+" let g:copilot_no_tab_map = v:true
 
 " --- neoclide/coc.nvim settings
 " Use tab for trigger completion with characters ahead and navigate.
