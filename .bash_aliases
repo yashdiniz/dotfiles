@@ -1,5 +1,6 @@
 # some cool widgets
 alias weather="curl https://wttr.in/?format=4"
+alias dy="dig +short @dns.toys"
 
 # aliases for terminal convenience
 alias ga="git add"
