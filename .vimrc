@@ -1,21 +1,21 @@
 " Author: Yash Diniz 
 
-" Setting up requirements for Vundle.
-" filetype off	" temporarily turn off filetype
-" set rtp+=~/.config/nvim/bundle/Vundle.vim
-
 call plug#begin()
 
-" Plug 'VundleVim/Vundle.vim'	" https://github.com/gmarik/vundle
-
 " make vim look good
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 
 " Working with Git
 Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rhubarb'
+Plug 'tpope/vim-fugitive' | Plug 'tpope/vim-rhubarb'
+
+" autocomplete
+" Plug 'Shougo/deoplete.nvim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc-snippets' | Plug 'honza/vim-snippets'
+
+" linters
+Plug 'dense-analysis/ale'
 
 " Other text editing features (syntax highlighting, delimiter, comment toggling)
 Plug 'Raimondi/delimitMate'     " Automatic delimiter
@@ -35,15 +35,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'rust-lang/rust.vim'
 
-" linters
-Plug 'dense-analysis/ale'
-
-" autocomplete
-" Plug 'Shougo/deoplete.nvim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-
-" GitHub copilot (disabling because trial ended)
+" GitHub copilot
 Plug 'github/copilot.vim'
 
 call plug#end()
@@ -203,6 +195,13 @@ nmap <silent> gr <Plug>(coc-references)
 
 " recognize .md files as markdown files
 au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
+augroup mydelimitMate
+  au!
+  au FileType markdown let b:delimitMate_nesting_quotes = ["`"]
+  au FileType tex let b:delimitMate_quotes = ""
+  au FileType tex let b:delimitMate_matchpairs = "(:),[:],{:},`:'"
+  au FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
+augroup END
 
 " enable spell-checking for markdown files
 autocmd BufRead,BufNewFile *.md setlocal spell
@@ -265,10 +264,4 @@ endif
 
 " --- Raimondi/delimitMate 
 let delimitMate_expand_cr = 1
-augroup mydelimitMate
-  au!
-  au FileType markdown let b:delimitMate_nesting_quotes = ["`"]
-  au FileType tex let b:delimitMate_quotes = ""
-  au FileType tex let b:delimitMate_matchpairs = "(:),[:],{:},`:'"
-  au FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
-augroup END
+
