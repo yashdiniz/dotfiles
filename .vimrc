@@ -34,6 +34,7 @@ Plug 'christoomey/vim-tmux-navigator'
 " language extensions
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'rust-lang/rust.vim'
+Plug 'mattn/emmet-vim'      " Emmet!
 
 " GitHub copilot
 Plug 'github/copilot.vim'
