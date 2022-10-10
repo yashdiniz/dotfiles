@@ -22,7 +22,6 @@ Plug 'Raimondi/delimitMate'     " Automatic delimiter
 Plug 'mbbill/undotree'
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-commentary'
-Plug 'elixir-lang/vim-elixir'
 
 " fzf!
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
