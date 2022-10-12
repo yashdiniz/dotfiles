@@ -8,6 +8,17 @@ M.vimFugitive = {
   }
 }
 
+M.dap = {
+  n = {
+    ["<F1>"] = {"<cmd>lua require'dap'.continue()<CR>", "Debugger: Continue"},
+    ["<F2>"] = {"<cmd>lua require'dap'.step_into()<CR>", "Debugger: Step into"},
+    ["<F3>"] = {"<cmd>lua require'dap'.step_over()<CR>", "Debugger: Step over"},
+    ["<F4>"] = {"<cmd>lua require'dap'.step_out()<CR>", "Debugger: Step out"},
+    ["<leader>b"] = {"<cmd>lua require'dap'.toggle_breakpoint()<CR>", "Debugger: Toggle breakpoint"},
+    ["<leader>ui"] = {"<cmd>lua require 'dapui'.toggle()<CR>", "Debugger UI: Toggle UI"},
+  }
+}
+
 M.general = {
   n = {
     [";"] = {":", "enter cmdline", opts={nowait=true}},
