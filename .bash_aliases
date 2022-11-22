@@ -14,10 +14,10 @@ alias vim="nvim"
 alias vimdiff="nvim -d"
 
 # aliases to work folders (for yash@yash-IdeaPad-5-15ITL05)
-alias s="cd ~/spyke"
-alias smom="cd ~/spyke/minutes-of-meetings"
-alias sna="cd ~/spyke/Spyke-FrontEnd"
-alias sga="cd ~/spyke/spyke-gateway"
+alias s="cd ~/Workspaces/spyke"
+alias smom="cd ~/Workspaces/spyke/minutes-of-meetings"
+alias sna="cd ~/Workspaces/spyke/Spyke-FrontEnd"
+alias sga="cd ~/Workspaces/spyke/spyke-gateway"
 
 # personal stuff
-alias blog="cd ~/personal/yashdiniz.github.io"
+alias blog="cd ~/Workspaces/personal/yashdiniz.github.io"
