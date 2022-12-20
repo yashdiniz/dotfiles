@@ -9,9 +9,9 @@ if [ ! -x "$(command -v node)" ]; then
     # sudo apt-get install nodejs
 fi
 
-# adding vim-Plug to neovim
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim \
-    --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+# add packer.nvim
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
 # alacritty
 git clone https://github.com/alacritty/alacritty.git alacritty_git/
