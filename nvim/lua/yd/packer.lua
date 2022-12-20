@@ -20,7 +20,6 @@ require('packer').startup(function(use)
   -- colorscheme onedark
   use {
     'navarasu/onedark.nvim',
-    after = 'nvim-treesitter',
     as = 'onedark',
     config = function()
       vim.cmd [[colorscheme onedark]]
@@ -53,40 +52,40 @@ require('packer').startup(function(use)
 
   -- lsp-zero reduces a lot of the boilerplate for LSP autocomplete
   use {
-	  'VonHeikemen/lsp-zero.nvim',
-	  as = 'lsp-zero',
-	  requires = {
-		  -- LSP Support
-		  {'neovim/nvim-lspconfig'},
-		  {'williamboman/mason.nvim'},
-		  {'williamboman/mason-lspconfig.nvim'},
+    'VonHeikemen/lsp-zero.nvim',
+    as = 'lsp-zero',
+    requires = {
+      -- LSP Support
+      {'neovim/nvim-lspconfig'},
+      {'williamboman/mason.nvim'},
+      {'williamboman/mason-lspconfig.nvim'},
 
-		  -- Autocompletion
-		  {'hrsh7th/nvim-cmp'},
-		  {'hrsh7th/cmp-buffer'},
-		  {'hrsh7th/cmp-path'},
-		  {'saadparwaiz1/cmp_luasnip'},
-		  {'hrsh7th/cmp-nvim-lsp'},
-		  {'hrsh7th/cmp-nvim-lua'},
+      -- Autocompletion
+      {'hrsh7th/nvim-cmp'},
+      {'hrsh7th/cmp-buffer'},
+      {'hrsh7th/cmp-path'},
+      {'saadparwaiz1/cmp_luasnip'},
+      {'hrsh7th/cmp-nvim-lsp'},
+      {'hrsh7th/cmp-nvim-lua'},
 
-		  -- Snippets
-		  {'L3MON4D3/LuaSnip'},
-		  -- {'rafamadriz/friendly-snippets'},
-		  {'honza/vim-snippets'},
-	  }
+      -- Snippets
+      {'L3MON4D3/LuaSnip'},
+      -- {'rafamadriz/friendly-snippets'},
+      {'honza/vim-snippets'},
+    }
   }
 
   -- go
   use {
-	  'fatih/vim-go',
-	  run = ':GoInstallBinaries',
-	  after = 'lsp-zero'
+    'fatih/vim-go',
+    run = ':GoInstallBinaries',
+    after = 'lsp-zero'
   }
 
   -- rust
   use {
-	  'rust-lang/rust.vim',
-	  after = 'lsp-zero'
+    'rust-lang/rust.vim',
+    after = 'lsp-zero'
   }
 
   -- thePrimeagen's harpoon? (trying it out)
@@ -94,6 +93,19 @@ require('packer').startup(function(use)
 
   -- fancier statusline
   use('nvim-lualine/lualine.nvim')
+
+  -- copilot!
+  use('github/copilot.vim')
+  -- copilot (using the pure lua alternative)
+ --  use {
+ --    'zbirenbaum/copilot.lua',
+ --    after = 'lualine.nvim',
+ --    config = function()
+ --      vim.defer_fn(function()
+	-- require('copilot').setup()
+ --      end, 250)
+ --    end
+ --  }
 end)
 
 -- run PackerSync on bootstrap
