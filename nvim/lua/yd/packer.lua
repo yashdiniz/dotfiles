@@ -94,18 +94,21 @@ require('packer').startup(function(use)
   -- fancier statusline
   use('nvim-lualine/lualine.nvim')
 
+  -- file managing , picker etc
+  use {
+    'nvim-tree/nvim-tree.lua',
+    requires = { "nvim-tree/nvim-web-devicons" },
+    -- cmd = { "NvimTreeToggle", "NvimTreeFocus" },
+    -- config = function()
+    --   require "plugins.configs.nvimtree"
+    -- end,
+    -- setup = function()
+    --   require("core.utils").load_mappings "nvimtree"
+    -- end,
+  }
+
   -- copilot!
   use('github/copilot.vim')
-  -- copilot (using the pure lua alternative)
- --  use {
- --    'zbirenbaum/copilot.lua',
- --    after = 'lualine.nvim',
- --    config = function()
- --      vim.defer_fn(function()
-	-- require('copilot').setup()
- --      end, 250)
- --    end
- --  }
 end)
 
 -- run PackerSync on bootstrap

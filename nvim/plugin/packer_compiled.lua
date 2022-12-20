@@ -159,6 +159,11 @@ _G.packer_plugins = {
     path = "/home/yash/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-tree.lua"] = {
+    loaded = true,
+    path = "/home/yash/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+    url = "https://github.com/nvim-tree/nvim-tree.lua"
+  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/home/yash/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
@@ -170,6 +175,11 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/home/yash/.local/share/nvim/site/pack/packer/opt/nvim-treesitter-textobjects",
     url = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
+  },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "/home/yash/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
   onedark = {
     config = { "\27LJ\2\n7\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\24colorscheme onedark\bcmd\bvim\0" },
@@ -259,13 +269,13 @@ time([[Conditional loading of telescope-fzf-native.nvim]], true)
 time([[Conditional loading of telescope-fzf-native.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
-vim.cmd [[ packadd nvim-treesitter ]]
-vim.cmd [[ packadd nvim-treesitter-textobjects ]]
+vim.cmd [[ packadd lsp-zero ]]
+vim.cmd [[ packadd rust.vim ]]
+vim.cmd [[ packadd vim-go ]]
 vim.cmd [[ packadd vim-fugitive ]]
 vim.cmd [[ packadd vim-rhubarb ]]
-vim.cmd [[ packadd lsp-zero ]]
-vim.cmd [[ packadd vim-go ]]
-vim.cmd [[ packadd rust.vim ]]
+vim.cmd [[ packadd nvim-treesitter ]]
+vim.cmd [[ packadd nvim-treesitter-textobjects ]]
 time([[Sequenced loading]], false)
 
 _G._packer.inside_compile = false
