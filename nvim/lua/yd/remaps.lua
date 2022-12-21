@@ -10,15 +10,12 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
-vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
-
--- if wrapped, gj goes through one line at a time
-vim.keymap.set({ 'n', 'v' }, 'j', 'gj')
-vim.keymap.set({ 'n', 'v' }, 'k', 'gk')
+-- remap ; to :
+vim.keymap.set({ 'n', 'v' }, ';', ':')
 
 -- move blocks of highlighted code!
-vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
-vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { silent = true })
+vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { silent = true })
 
 -- keep cursor in the middle as we jump around in files
 vim.keymap.set('n', '<C-d>', "<C-d>zz")
@@ -37,3 +34,19 @@ vim.keymap.set('v', '<leader>d', "\"_d")
 vim.keymap.set('n', '<leader>y', "\"+y")
 vim.keymap.set('v', '<leader>y', "\"+y")
 vim.keymap.set('n', '<leader>Y', "\"+Y")
+
+-- when in diff mode (nvim -d)
+if vim.fn.has('diff') then
+  -- http://vimcasts.org/episodes/fugitive-vim-resolving-merge-conflicts-with-vimdiff/
+  -- :Gdiffsplit for three way merge, 
+  -- with dp as key binding to transfer the preferred hunk to working copy. 
+  -- Use [c or ]c to jump between hunks, and
+  -- :only or :Gwrite[!] to finally show the working copy!
+  vim.keymap.set('n', '<leader>h', "<cmd>diffget //2<CR>")
+  vim.keymap.set('n', '<leader>l', "<cmd>diffget //3<CR>")
+end
+
+-- vim.keymap.set('n', '<C-h>', '<C-w>h')
+-- vim.keymap.set('n', '<C-j>', '<C-w>j')
+-- vim.keymap.set('n', '<C-k>', '<C-w>k')
+-- vim.keymap.set('n', '<C-l>', '<C-w>l')
