@@ -15,7 +15,7 @@ vim.opt.expandtab = true
 
 vim.opt.smartindent = true
 
-vim.opt.wrap = false
+-- vim.opt.wrap = false
 
 -- disable vim backups, but maintain list of undos
 vim.opt.swapfile = false
@@ -39,7 +39,7 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 250
 
-vim.opt.colorcolumn = "120"
+vim.opt.colorcolumn = "100"
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
