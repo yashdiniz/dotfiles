@@ -101,6 +101,13 @@ vim.g.nvimtree_side = options.view.side
 
 vim.keymap.set('n', '<C-n>', '<cmd>NvimTreeToggle<CR>', { desc = 'Toggle NvimTree' })
 vim.keymap.set('n', '<leader>f', '<cmd>NvimTreeFocus<CR>', { desc = '[f]ocus NvimTree' })
-vim.keymap.set('n', '<leader>r', '<cmd>NvimTreeRefresh<CR>', { desc = '[r]efresh NvimTree' })
+
+vim.api.nvim_create_autocmd('BufWritePre', {
+  pattern = '*',
+  callback = function()
+    print('BufWritePre')
+    vim.cmd [[NvimTreeRefresh]]
+  end,
+})
 
 nvimtree.setup(options)
