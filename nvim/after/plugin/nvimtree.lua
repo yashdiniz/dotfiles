@@ -103,7 +103,7 @@ vim.keymap.set('n', '<C-n>', '<cmd>NvimTreeToggle<CR>', { desc = 'Toggle NvimTre
 vim.keymap.set('n', '<leader>f', '<cmd>NvimTreeFocus<CR>', { desc = '[f]ocus NvimTree' })
 
 vim.api.nvim_create_autocmd('BufWritePost', {
-  pattern = 'COMMIT_EDITMSG',
+  pattern = '*/COMMIT_EDITMSG',
   callback = function()
     print('BufWritePre')
     vim.cmd [[NvimTreeRefresh]]
