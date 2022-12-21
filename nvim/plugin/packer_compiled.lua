@@ -222,6 +222,11 @@ _G.packer_plugins = {
     path = "/home/yash/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["twilight.nvim"] = {
+    loaded = true,
+    path = "/home/yash/.local/share/nvim/site/pack/packer/start/twilight.nvim",
+    url = "https://github.com/folke/twilight.nvim"
+  },
   undotree = {
     loaded = true,
     path = "/home/yash/.local/share/nvim/site/pack/packer/start/undotree",
@@ -255,6 +260,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/yash/.local/share/nvim/site/pack/packer/start/vim-snippets",
     url = "https://github.com/honza/vim-snippets"
+  },
+  ["zen-mode.nvim"] = {
+    loaded = true,
+    path = "/home/yash/.local/share/nvim/site/pack/packer/start/zen-mode.nvim",
+    url = "https://github.com/folke/zen-mode.nvim"
   }
 }
 
@@ -272,10 +282,10 @@ time([[Sequenced loading]], true)
 vim.cmd [[ packadd lsp-zero ]]
 vim.cmd [[ packadd rust.vim ]]
 vim.cmd [[ packadd vim-go ]]
-vim.cmd [[ packadd vim-fugitive ]]
-vim.cmd [[ packadd vim-rhubarb ]]
 vim.cmd [[ packadd nvim-treesitter ]]
 vim.cmd [[ packadd nvim-treesitter-textobjects ]]
+vim.cmd [[ packadd vim-fugitive ]]
+vim.cmd [[ packadd vim-rhubarb ]]
 time([[Sequenced loading]], false)
 
 _G._packer.inside_compile = false
