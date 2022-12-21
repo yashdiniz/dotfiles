@@ -17,6 +17,13 @@ local options = {
     enable = true,
     update_cwd = false,
   },
+  git = {
+    enable = true,
+    ignore = true,
+    show_on_dirs = true,
+    show_on_open_dirs = true,
+    timeout = 400,
+  },
   view = {
     adaptive_size = true,
     side = "left",
