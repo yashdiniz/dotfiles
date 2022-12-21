@@ -98,13 +98,11 @@ require('packer').startup(function(use)
   use {
     'nvim-tree/nvim-tree.lua',
     requires = { "nvim-tree/nvim-web-devicons" },
-    -- cmd = { "NvimTreeToggle", "NvimTreeFocus" },
-    -- config = function()
-    --   require "plugins.configs.nvimtree"
-    -- end,
-    -- setup = function()
-    --   require("core.utils").load_mappings "nvimtree"
-    -- end,
+  }
+
+  use{
+    'folke/zen-mode.nvim',
+    requires = { 'folke/twilight.nvim' },
   }
 
   -- copilot!
