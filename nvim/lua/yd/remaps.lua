@@ -42,8 +42,8 @@ if vim.fn.has('diff') then
   -- with dp as key binding to transfer the preferred hunk to working copy. 
   -- Use [c or ]c to jump between hunks, and
   -- :only or :Gwrite[!] to finally show the working copy!
-  vim.keymap.set('n', '<leader>h', [[<cmd>diffget //2<CR>]])
-  vim.keymap.set('n', '<leader>l', [[<cmd>diffget //3<CR>]])
+  vim.keymap.set('n', '<leader>h', [[<cmd>diffget //2 <CR>]])
+  vim.keymap.set('n', '<leader>l', [[<cmd>diffget //3 <CR>]])
 end
 
 -- vim.keymap.set('n', '<C-h>', '<C-w>h')
