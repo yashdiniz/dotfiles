@@ -7,15 +7,16 @@ local options = {
     exclude = { vim.fn.stdpath "config" .. "/lua/custom" },
   },
   disable_netrw = true,
-  hijack_netrw = true,
-  open_on_setup = false,
   ignore_ft_on_setup = { "alpha" },
   hijack_cursor = true,
-  hijack_unnamed_buffer_when_opening = false,
   update_cwd = true,
   update_focused_file = {
     enable = true,
     update_cwd = false,
+  },
+  view = {
+    adaptive_size = true,
+    width = 25,
   },
   git = {
     enable = true,
@@ -24,36 +25,9 @@ local options = {
     show_on_open_dirs = true,
     timeout = 400,
   },
-  view = {
-    adaptive_size = true,
-    side = "left",
-    width = 25,
-    hide_root_folder = true,
-  },
-  filesystem_watchers = {
-    enable = true,
-  },
-  actions = {
-    open_file = {
-      resize_window = true,
-    },
-  },
   renderer = {
-    highlight_git = false,
-    highlight_opened_files = "none",
-
-    indent_markers = {
-      enable = false,
-    },
-
     icons = {
-      show = {
-        file = true,
-        folder = true,
-        folder_arrow = true,
-        git = true,
-      },
-
+      git_placement = "before",
       glyphs = {
         default = "",
         symlink = "",
@@ -78,12 +52,24 @@ local options = {
         },
       },
     },
+    special_files = {
+      "Makefile", "makefile", "MAKEFILE",
+      "README.md", "readme.md", "LICENSE", "license", "License",
+      -- "TODO.txt", "todo.txt", "Todo.txt", "TODO.md", "todo.md", "Todo.md",
+      -- "INSTALL.md", "install.md", "CHANGELOG.md", "changelog.md",
+      -- "CONTRIBUTING.md", "contributing.md", "CODE_OF_CONDUCT.md", "code_of_conduct.md",
+      -- "SECURITY.md", "security.md", "CODEOWNERS", "codeowners",
+      -- "PULL_REQUEST_TEMPLATE.md", "pull_request_template.md", "ISSUE_TEMPLATE.md", "issue_template.md",
+      ".gitconfig", ".gitignore", ".gitmodules", ".gitattributes",
+      "package.json", "package-lock.json", "yarn.lock",
+      "go.mod", "go.sum",
+      "Cargo.toml", "Cargo.lock",
+      "requirements.txt", "requirements-dev.txt", "requirements-test.txt",
+    },
   },
   diagnostics = {
     enable = true,
     show_on_dirs = true,
-    show_on_open_dirs = true,
-    debounce_delay = 50,
     severity = {
       min = vim.diagnostic.severity.HINT,
       max = vim.diagnostic.severity.ERROR,
