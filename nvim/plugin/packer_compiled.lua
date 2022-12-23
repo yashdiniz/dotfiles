@@ -124,6 +124,11 @@ _G.packer_plugins = {
     path = "/home/yash/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/theprimeagen/harpoon"
   },
+  ["impatient.nvim"] = {
+    loaded = true,
+    path = "/home/yash/.local/share/nvim/site/pack/packer/start/impatient.nvim",
+    url = "https://github.com/lewis6991/impatient.nvim"
+  },
   ["indent-blankline.nvim"] = {
     loaded = true,
     path = "/home/yash/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
@@ -188,7 +193,6 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
   onedark = {
-    config = { "\27LJ\2\n7\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\24colorscheme onedark\bcmd\bvim\0" },
     loaded = true,
     path = "/home/yash/.local/share/nvim/site/pack/packer/start/onedark",
     url = "https://github.com/navarasu/onedark.nvim"
@@ -275,10 +279,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: onedark
-time([[Config for onedark]], true)
-try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\24colorscheme onedark\bcmd\bvim\0", "config", "onedark")
-time([[Config for onedark]], false)
 -- Config for: nvim-autopairs
 time([[Config for nvim-autopairs]], true)
 try_loadstring("\27LJ\2\n<\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
@@ -289,13 +289,13 @@ time([[Conditional loading of telescope-fzf-native.nvim]], true)
 time([[Conditional loading of telescope-fzf-native.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
-vim.cmd [[ packadd nvim-treesitter ]]
-vim.cmd [[ packadd nvim-treesitter-textobjects ]]
+vim.cmd [[ packadd vim-fugitive ]]
+vim.cmd [[ packadd vim-rhubarb ]]
 vim.cmd [[ packadd lsp-zero ]]
 vim.cmd [[ packadd vim-go ]]
 vim.cmd [[ packadd rust.vim ]]
-vim.cmd [[ packadd vim-fugitive ]]
-vim.cmd [[ packadd vim-rhubarb ]]
+vim.cmd [[ packadd nvim-treesitter ]]
+vim.cmd [[ packadd nvim-treesitter-textobjects ]]
 time([[Sequenced loading]], false)
 
 _G._packer.inside_compile = false

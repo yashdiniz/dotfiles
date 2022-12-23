@@ -1,7 +1,7 @@
 local install_path = vim.fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
-local is_bootstrap = false
+local is_firsttime = false
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-  is_bootstrap = true
+  is_firsttime = true
   vim.fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
   vim.cmd [[packadd packer.nvim]]
 end
@@ -21,9 +21,6 @@ require('packer').startup(function(use)
   use {
     'navarasu/onedark.nvim',
     as = 'onedark',
-    config = function()
-      vim.cmd [[colorscheme onedark]]
-    end
   }
 
   -- treesitter and playground
@@ -41,6 +38,7 @@ require('packer').startup(function(use)
 
   use('mbbill/undotree')
   use('lewis6991/gitsigns.nvim')
+  use('lewis6991/impatient.nvim')
   use('tpope/vim-fugitive')
   use {
     'tpope/vim-rhubarb',
@@ -115,8 +113,8 @@ require('packer').startup(function(use)
   use('github/copilot.vim')
 end)
 
--- run PackerSync on bootstrap
-if is_bootstrap then
+-- run PackerSync on first time install
+if is_firsttime then
   require('packer').sync()
 end
 
