@@ -27,14 +27,14 @@ vim.keymap.set('n', 'N', "Nzz")
 vim.keymap.set('x', '<leader>p', "\"_dP")
 
 -- delete while maintaining curent buffer!
-vim.keymap.set('n', '<leader>d', "\"_d")
-vim.keymap.set('v', '<leader>d', "\"_d")
+vim.keymap.set({ 'n', 'v' }, '<leader>d', "\"_d")
 
 -- yank to system clipboard!
-vim.keymap.set('n', '<leader>y', "\"+y")
-vim.keymap.set('v', '<leader>y', "\"+y")
+vim.keymap.set({ 'n', 'v' }, '<leader>y', "\"+y")
 vim.keymap.set('n', '<leader>Y', "\"+Y")
 
+-- enter diff mode
+vim.keymap.set('n', '<leader>gd', [[<cmd>lua require('gitsigns').diffthis()<CR>]])
 -- when in diff mode (nvim -d)
 if vim.fn.has('diff') then
   -- http://vimcasts.org/episodes/fugitive-vim-resolving-merge-conflicts-with-vimdiff/
@@ -45,6 +45,9 @@ if vim.fn.has('diff') then
   vim.keymap.set('n', '<leader>h', [[<cmd>diffget //2 <CR>]])
   vim.keymap.set('n', '<leader>l', [[<cmd>diffget //3 <CR>]])
 end
+
+-- close a buffer
+vim.keymap.set('n', '<leader>x', [[<cmd>bd<CR>]])
 
 -- vim.keymap.set('n', '<C-h>', '<C-w>h')
 -- vim.keymap.set('n', '<C-j>', '<C-w>j')
