@@ -292,8 +292,8 @@ time([[Sequenced loading]], true)
 vim.cmd [[ packadd vim-fugitive ]]
 vim.cmd [[ packadd vim-rhubarb ]]
 vim.cmd [[ packadd lsp-zero ]]
-vim.cmd [[ packadd vim-go ]]
 vim.cmd [[ packadd rust.vim ]]
+vim.cmd [[ packadd vim-go ]]
 vim.cmd [[ packadd nvim-treesitter ]]
 vim.cmd [[ packadd nvim-treesitter-textobjects ]]
 time([[Sequenced loading]], false)
