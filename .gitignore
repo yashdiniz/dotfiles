@@ -1,3 +1,5 @@
 # ignore alacritty (will get cloned here)
 alacritty_git/
 
+# ignore profile.txt from neovim profiling: `nvim --startuptime "`date`profile.txt"`
+*profile.txt
