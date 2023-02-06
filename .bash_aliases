@@ -6,6 +6,7 @@ alias dy="dig +short @dns.toys"
 alias ga="git add"
 alias gc="git commit -S"
 alias gd="git diff"
+alias gg="lazygit"
 alias gst="git status"
 alias tmux="tmux -u"
 
