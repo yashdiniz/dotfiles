@@ -6,6 +6,7 @@ alias dy="dig +short @dns.toys"
 alias ga="git add"
 alias gc="git commit -S"
 alias gd="git diff"
+alias gst="git status"
 alias tmux="tmux -u"
 
 # vim aliases to neovim
