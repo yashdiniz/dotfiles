@@ -20,6 +20,24 @@ lsp.nvim_workspace()
 -- lazy loading honza/vim-snippets snipmate format
 require('luasnip.loaders.from_snipmate').lazy_load()
 
+-- lsp-zero and lspconfig configurations are easy to translate
+-- See https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+lsp.configure('gopls', {
+  settings = {
+    gopls = {
+      analyses = {
+        fieldalignment = true,
+        nilness = true,
+        unusedparams = true,
+        unusedwrite = true,
+        unusedvariable = true,
+        ununsedresult = true,
+      },
+      staticcheck = true,
+    },
+  },
+})
+
 lsp.on_attach(function(_, bufnr)
   local nmap = function(keys, func, desc)
     if desc then
@@ -55,6 +73,21 @@ lsp.on_attach(function(_, bufnr)
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   end, '[W]orkspace [L]ist Folders')
 
+  -- Custom goimports function
+  local function go_org_imports(wait_ms)
+    local params = vim.lsp.util.make_range_params()
+    params.context = {only = {"source.organizeImports"}}
+    local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params, wait_ms)
+    for cid, res in pairs(result or {}) do
+      for _, r in pairs(res.result or {}) do
+        if r.edit then
+          local enc = (vim.lsp.get_client_by_id(cid) or {}).offset_encoding or "utf-16"
+          vim.lsp.util.apply_workspace_edit(r.edit, enc)
+        end
+      end
+    end
+  end
+
   -- Create a command `:Format` local to the LSP buffer
   vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
     if vim.lsp.buf.format then
@@ -63,6 +96,21 @@ lsp.on_attach(function(_, bufnr)
       vim.lsp.buf.formatting()
     end
   end, { desc = 'Format current buffer with LSP' })
+
+  -- Create an autocommand that runs `:Format` on save
+  vim.api.nvim_create_augroup('lsp', {clear = true})
+  vim.api.nvim_create_autocmd('BufWritePre', {
+    group = 'lsp',
+    callback = function()
+      vim.cmd('Format')
+    end,
+  })
+  vim.api.nvim_create_autocmd('BufWritePre', {
+    group = 'lsp',
+    callback = function()
+      go_org_imports(1000)
+    end,
+  })
 end)
 
 lsp.setup()
