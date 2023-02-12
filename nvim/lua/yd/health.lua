@@ -10,7 +10,7 @@ function M.check()
     vim.health.report_error('Neovim >= 0.8.0 is required')
   end
 
-  for _, cmd in ipairs({ 'git', 'rg', 'lazygit', 'fzf', 'tree-sitter', 'node' }) do
+  for _, cmd in ipairs({ 'git', 'rg', 'lazygit', 'fzf', 'tree-sitter', 'node', 'go' }) do
     if vim.fn.executable(cmd) == 1 then
       vim.health.report_ok(('`%s` is installed'):format(cmd))
     else
