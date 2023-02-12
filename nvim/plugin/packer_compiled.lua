@@ -247,13 +247,6 @@ _G.packer_plugins = {
     path = "/home/yash/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
   },
-  ["vim-go"] = {
-    load_after = {},
-    loaded = true,
-    needs_bufread = false,
-    path = "/home/yash/.local/share/nvim/site/pack/packer/opt/vim-go",
-    url = "https://github.com/fatih/vim-go"
-  },
   ["vim-rhubarb"] = {
     load_after = {},
     loaded = true,
@@ -289,13 +282,12 @@ time([[Conditional loading of telescope-fzf-native.nvim]], true)
 time([[Conditional loading of telescope-fzf-native.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
-vim.cmd [[ packadd lsp-zero ]]
-vim.cmd [[ packadd vim-go ]]
-vim.cmd [[ packadd rust.vim ]]
 vim.cmd [[ packadd nvim-treesitter ]]
 vim.cmd [[ packadd nvim-treesitter-textobjects ]]
 vim.cmd [[ packadd vim-fugitive ]]
 vim.cmd [[ packadd vim-rhubarb ]]
+vim.cmd [[ packadd lsp-zero ]]
+vim.cmd [[ packadd rust.vim ]]
 time([[Sequenced loading]], false)
 
 _G._packer.inside_compile = false
