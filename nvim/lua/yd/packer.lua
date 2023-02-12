@@ -80,11 +80,11 @@ require('packer').startup(function(use)
   }
 
   -- go
-  -- use {
-  --   'fatih/vim-go',
-  --   run = ':GoInstallBinaries',
-  --   after = 'lsp-zero'
-  -- }
+  use {
+    'fatih/vim-go',
+    run = ':GoInstallBinaries',
+    after = 'lsp-zero'
+  }
 
   -- rust
   use {
