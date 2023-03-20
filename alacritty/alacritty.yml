@@ -107,9 +107,42 @@ window:
 
 # Font configuration
 font:
-  emoji:
-    family: Noto Color Emoji
-    style: Regular
+  # Bold font face
+  bold:
+    # Font family
+    #
+    # If the bold family is not specified, it will fall back to the
+    # value specified for the normal font.
+    family: MesloLGSDZ NF
+    # family: VictorMono NF
+
+    # The `style` can be specified to pick a specific face.
+    style: Bold
+
+  # Bold italic font face
+  bold_italic:
+    # Font family
+    #
+    # If the bold italic family is not specified, it will fall back to the
+    # value specified for the normal font.
+    family: MesloLGSDZ NF
+    # family: VictorMono NF
+
+    # The `style` can be specified to pick a specific face.
+    style: Bold Italic
+
+  # Italic font face
+  italic:
+    # Font family
+    #
+    # If the italic family is not specified, it will fall back to the
+    # value specified for the normal font.
+    family: MesloLGSDZ NF
+    # family: VictorMono NF
+
+    # The `style` can be specified to pick a specific face.
+    style: Italic
+
   # Normal (roman) font face
   normal:
     # Font family
@@ -118,47 +151,11 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: Meslo LGSDZ NF
+    family: MesloLGSDZ NF
     # family: VictorMono NF
 
     # The `style` can be specified to pick a specific face.
     style: Regular
-
-  # Bold font face
-  bold:
-    # Font family
-    #
-    # If the bold family is not specified, it will fall back to the
-    # value specified for the normal font.
-    family: Meslo LGSDZ NF
-    # family: VictorMono NF
-
-    # The `style` can be specified to pick a specific face.
-    style: Bold
-
-  # Italic font face
-  italic:
-    # Font family
-    #
-    # If the italic family is not specified, it will fall back to the
-    # value specified for the normal font.
-    family: Meslo LGSDZ NF
-    # family: VictorMono NF
-
-    # The `style` can be specified to pick a specific face.
-    style: Italic
-
-  # Bold italic font face
-  bold_italic:
-    # Font family
-    #
-    # If the bold italic family is not specified, it will fall back to the
-    # value specified for the normal font.
-    family: Meslo LGSDZ NF
-    # family: VictorMono NF
-
-    # The `style` can be specified to pick a specific face.
-    style: Bold Italic
 
   # Point size
   # size: 11.0
@@ -436,8 +433,14 @@ font:
 #   - (macOS) /bin/bash --login
 #   - (Linux/BSD) user login shell
 #   - (Windows) powershell
-#shell:
-#  program: /bin/bash
+shell:
+  # args:
+  #   - new-session
+  #   - -A
+  #   - -D
+  #   - -s
+  #   - main
+  program: /bin/bash  # /usr/bin/tmux  
 #  args:
 #    - --login
 
