@@ -9,6 +9,15 @@ if [ ! -x "$(command -v node)" ]; then
     # sudo apt-get install nodejs
 fi
 
+# add symlink to .bashrc
+ln -s ~/linux-customizations/.bashrc ~/.bashrc
+
+# install fish
+sudo apt-get install fish
+
+# add symlink to .config/fish/config.fish
+ln -s ~/linux-customizations/config.fish ~/.config/fish/config.fish
+
 # add packer.nvim
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
