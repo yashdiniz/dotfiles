@@ -3,10 +3,8 @@ if status is-interactive
     command inxi -PBxz
 
     function fish_prompt -d "Write out the prompt"
+        set st $status
         set_color -o
-        if test $status -ne 0 
-            echo -n "[$status] "
-        end 
         if test -n "$SSH_CONNECTION"
             echo -n '⚡'
         end
@@ -14,9 +12,11 @@ if status is-interactive
         if fish_is_root_user
             set user_char '# '
         end
-        printf '%s@ %s%s%s%s%s' $USER \
+        # $USER $HOSTNAME $PWD
+        printf '👤 %s%s%s%s%s%s%s%s' \
             (set_color $fish_color_cwd) (prompt_pwd) (set_color normal) \
             (fish_git_prompt) \
+            (set_color $fish_color_status) "[$st]" (set_color normal) \
             $user_char
     end
 end
