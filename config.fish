@@ -59,19 +59,19 @@ end
 
 # aliases to work folders (for yash@yash-IdeaPad-5-15ITL05)
 function s
-    command cd "~/Workspaces/spyke" $argv
+    cd ~/Workspaces/spyke $argv
 end
 function smom
-    command cd "~/Workspaces/spyke/minutes-of-meetings" $argv
+    cd ~/Workspaces/spyke/minutes-of-meetings $argv
 end
 function sna
-    command cd "~/Workspaces/spyke/Spyke-FrontEnd" $argv
+    cd ~/Workspaces/spyke/Spyke-FrontEnd $argv
 end
 function sga 
-    command cd "~/Workspaces/spyke/spyke-gateway" $argv
+    cd ~/Workspaces/spyke/spyke-gateway $argv
 end
 
 # personal stuff
 function blog
-    command cd "~/Workspaces/personal/yashdiniz.github.io" $argv
+    cd ~/Workspaces/personal/yashdiniz.github.io $argv
 end
