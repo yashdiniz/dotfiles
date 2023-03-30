@@ -122,6 +122,7 @@ inxi -PBxz
 # export GPG_TTY=$(tty)
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
+export ANDROID_HOME=$HOME/Android/Sdk
 export GOPATH=$HOME/go
 export NODE_PATH=$HOME/.npm/lib/node_modules:$NODE_PATH
 export PATH=$PATH:$HOME/.npm/bin
