@@ -2,7 +2,7 @@ local install_path = vim.fn.stdpath 'data' .. '/site/pack/packer/start/packer.nv
 local is_firsttime = false
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
   is_firsttime = true
-  vim.fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+  vim.fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
   vim.cmd [[packadd packer.nvim]]
 end
 
@@ -13,7 +13,7 @@ require('packer').startup(function(use)
   -- telescope.nvim
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.x',
-    requires = { {'nvim-lua/plenary.nvim'} }
+    requires = { { 'nvim-lua/plenary.nvim' } }
   }
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable 'make' == 1 }
 
@@ -45,8 +45,8 @@ require('packer').startup(function(use)
     after = 'vim-fugitive'
   }
   use('lukas-reineke/indent-blankline.nvim') -- indentation guides
-  use('numtoStr/Comment.nvim') -- tool to use "gc" to comment visual regions 
-  use('tpope/vim-sleuth') -- smartly detect tabstop and shiftwidth
+  use('numtoStr/Comment.nvim')               -- tool to use "gc" to comment visual regions
+  use('tpope/vim-sleuth')                    -- smartly detect tabstop and shiftwidth
 
   -- lsp-zero reduces a lot of the boilerplate for LSP autocomplete
   use {
@@ -54,17 +54,17 @@ require('packer').startup(function(use)
     as = 'lsp-zero',
     requires = {
       -- LSP Support
-      {'neovim/nvim-lspconfig'},
-      {'williamboman/mason.nvim'},
-      {'williamboman/mason-lspconfig.nvim'},
+      { 'neovim/nvim-lspconfig' },
+      { 'williamboman/mason.nvim' },
+      { 'williamboman/mason-lspconfig.nvim' },
 
       -- Autocompletion
-      {'hrsh7th/nvim-cmp'},
-      {'hrsh7th/cmp-nvim-lsp'},
-      {'hrsh7th/cmp-buffer'},
-      {'hrsh7th/cmp-path'},
-      {'saadparwaiz1/cmp_luasnip'},
-      {'hrsh7th/cmp-nvim-lua'},
+      { 'hrsh7th/nvim-cmp' },
+      { 'hrsh7th/cmp-nvim-lsp' },
+      { 'hrsh7th/cmp-buffer' },
+      { 'hrsh7th/cmp-path' },
+      { 'saadparwaiz1/cmp_luasnip' },
+      { 'hrsh7th/cmp-nvim-lua' },
       {
         'windwp/nvim-autopairs',
         config = function()
@@ -73,9 +73,9 @@ require('packer').startup(function(use)
       },
 
       -- Snippets
-      {'L3MON4D3/LuaSnip'},
+      { 'L3MON4D3/LuaSnip' },
       -- {'rafamadriz/friendly-snippets'},
-      {'honza/vim-snippets'},
+      { 'honza/vim-snippets' },
     }
   }
 
@@ -104,7 +104,7 @@ require('packer').startup(function(use)
     requires = { "nvim-tree/nvim-web-devicons" },
   }
 
-  use{
+  use {
     'folke/zen-mode.nvim',
     requires = { 'folke/twilight.nvim' },
   }

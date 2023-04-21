@@ -282,12 +282,12 @@ time([[Conditional loading of telescope-fzf-native.nvim]], true)
 time([[Conditional loading of telescope-fzf-native.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
-vim.cmd [[ packadd vim-fugitive ]]
-vim.cmd [[ packadd vim-rhubarb ]]
 vim.cmd [[ packadd lsp-zero ]]
 vim.cmd [[ packadd rust.vim ]]
 vim.cmd [[ packadd nvim-treesitter ]]
 vim.cmd [[ packadd nvim-treesitter-textobjects ]]
+vim.cmd [[ packadd vim-fugitive ]]
+vim.cmd [[ packadd vim-rhubarb ]]
 time([[Sequenced loading]], false)
 
 _G._packer.inside_compile = false
