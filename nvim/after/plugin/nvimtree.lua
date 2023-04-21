@@ -7,7 +7,7 @@ local options = {
     exclude = { vim.fn.stdpath "config" .. "/lua/custom" },
   },
   disable_netrw = true,
-  ignore_ft_on_setup = { "alpha" },
+  -- ignore_ft_on_setup = { "alpha" },
   hijack_cursor = true,
   update_cwd = true,
   update_focused_file = {
@@ -43,7 +43,7 @@ local options = {
         },
         git = {
           unstaged = "U✗", -- "✗",
-          staged = "A✓", -- "✓",
+          staged = "A✓",  -- "✓",
           unmerged = "",
           renamed = "R➜", -- "➜",
           untracked = "U★", -- "★",
