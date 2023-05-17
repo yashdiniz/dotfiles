@@ -5,15 +5,18 @@ if status is-interactive
     function fish_prompt -d "Write out the prompt"
         set st $status
         set_color -o
+        set -l user_emoji '👤'
         if test -n "$SSH_CONNECTION"
-            echo -n '⚡'
+            # set user_emoji '⚡'
+            set user_emoji '🌐'
         end
         set -l user_char '> '
         if fish_is_root_user
             set user_char '# '
         end
         # $USER $HOSTNAME $PWD
-        printf '👤 %s%s%s%s%s%s%s%s' \
+        printf '%s %s%s%s%s%s%s%s%s' \
+            $user_emoji \
             (set_color $fish_color_cwd) (prompt_pwd) (set_color normal) \
             (fish_git_prompt) \
             (set_color $fish_color_status) "[$st]" (set_color normal) \
