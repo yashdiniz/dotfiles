@@ -12,6 +12,9 @@ fi
 # add symlink to .bashrc
 ln -s ~/linux-customizations/.bashrc ~/.bashrc
 
+# add symlink to .gitconfig
+ln -s ~/linux-customizations/.gitconfig ~/.gitconfig
+
 # install fish
 sudo apt-get install fish
 
