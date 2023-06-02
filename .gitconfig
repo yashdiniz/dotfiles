@@ -30,3 +30,5 @@
 	; push = +refs/heads/*:refs/remotes/origin/*
 	; push = +refs/archive/*:refs/archive/*
 	; fetch = +refs/archive/*:refs/archive/*
+[init]
+	defaultBranch = main
