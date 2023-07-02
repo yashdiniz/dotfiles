@@ -92,7 +92,12 @@ require('packer').startup(function(use)
     after = 'lsp-zero'
   }
 
-  -- thePrimeagen's harpoon? (trying it out)
+  -- rescript
+  use {
+    'rescript-lang/vim-rescript',
+  }
+
+  -- thePrimeagen's harpoon
   use('theprimeagen/harpoon')
 
   -- fancier statusline
