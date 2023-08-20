@@ -90,6 +90,9 @@ end
 function sna
     cd ~/Workspaces/spyke/Spyke-FrontEnd $argv
 end
+function swa
+    cd ~/Workspaces/spyke/Spyke-Web-App $argv
+end
 function sga 
     cd ~/Workspaces/spyke/spyke-gateway $argv
 end
