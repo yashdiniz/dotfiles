@@ -79,13 +79,6 @@ require('packer').startup(function(use)
     }
   }
 
-  -- go
-  -- use {
-  --   'fatih/vim-go',
-  --   run = ':GoInstallBinaries',
-  --   after = 'lsp-zero'
-  -- }
-
   -- rust
   use {
     'rust-lang/rust.vim',
@@ -115,7 +108,30 @@ require('packer').startup(function(use)
   }
 
   -- copilot!
-  use('github/copilot.vim')
+  use {
+    'zbirenbaum/copilot.lua',
+    as = 'copilot',
+    cmd = 'Copilot',
+    event = 'InsertEnter',
+    config = function()
+      require('copilot').setup {
+        suggestion = {
+          auto_trigger = true,
+          keymap = {
+            accept = '<C-j>',
+          }
+        }
+      }
+    end
+  }
+
+  -- use {
+  --   'zbirenbaum/copilot-cmp',
+  --   after = { 'copilot.lua' },
+  --   config = function()
+  --     require("copilot_cmp").setup()
+  --   end
+  -- }
 end)
 
 -- run PackerSync on first time install
