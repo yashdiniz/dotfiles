@@ -118,6 +118,16 @@ _G.packer_plugins = {
     path = "/home/yash/.local/share/nvim/site/pack/packer/opt/copilot",
     url = "https://github.com/zbirenbaum/copilot.lua"
   },
+  ["dressing.nvim"] = {
+    loaded = true,
+    path = "/home/yash/.local/share/nvim/site/pack/packer/start/dressing.nvim",
+    url = "https://github.com/stevearc/dressing.nvim"
+  },
+  ["flutter-tools.nvim"] = {
+    loaded = true,
+    path = "/home/yash/.local/share/nvim/site/pack/packer/start/flutter-tools.nvim",
+    url = "https://github.com/akinsho/flutter-tools.nvim"
+  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/home/yash/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
@@ -291,12 +301,12 @@ time([[Conditional loading of telescope-fzf-native.nvim]], true)
 time([[Conditional loading of telescope-fzf-native.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
-vim.cmd [[ packadd vim-fugitive ]]
-vim.cmd [[ packadd vim-rhubarb ]]
-vim.cmd [[ packadd lsp-zero ]]
-vim.cmd [[ packadd rust.vim ]]
 vim.cmd [[ packadd nvim-treesitter ]]
 vim.cmd [[ packadd nvim-treesitter-textobjects ]]
+vim.cmd [[ packadd lsp-zero ]]
+vim.cmd [[ packadd rust.vim ]]
+vim.cmd [[ packadd vim-fugitive ]]
+vim.cmd [[ packadd vim-rhubarb ]]
 time([[Sequenced loading]], false)
 
 -- Command lazy-loads

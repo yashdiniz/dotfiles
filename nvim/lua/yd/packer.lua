@@ -90,6 +90,15 @@ require('packer').startup(function(use)
     'rescript-lang/vim-rescript',
   }
 
+  -- flutter
+  use {
+    'akinsho/flutter-tools.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim',
+      'stevearc/dressing.nvim',   -- optional for vim.ui.select
+    },
+  }
+
   -- thePrimeagen's harpoon
   use('theprimeagen/harpoon')
 
