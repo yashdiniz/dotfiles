@@ -23,6 +23,14 @@ require('packer').startup(function(use)
     as = 'onedark',
   }
 
+  -- nvim-dap
+  use {
+    'rcarriga/nvim-dap-ui',
+    requires = {
+      { 'mfussenegger/nvim-dap' },
+    },
+  }
+
   -- treesitter and playground
   use {
     'nvim-treesitter/nvim-treesitter',
@@ -95,7 +103,7 @@ require('packer').startup(function(use)
     'akinsho/flutter-tools.nvim',
     requires = {
       'nvim-lua/plenary.nvim',
-      'stevearc/dressing.nvim',   -- optional for vim.ui.select
+      'stevearc/dressing.nvim', -- optional for vim.ui.select
     },
   }
 
