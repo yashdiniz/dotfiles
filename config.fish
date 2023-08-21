@@ -101,3 +101,6 @@ end
 function blog
     cd ~/Workspaces/personal/yashdiniz.github.io $argv
 end
+function fcsa
+    cd ~/Workspaces/personal/measure_app $argv
+end
