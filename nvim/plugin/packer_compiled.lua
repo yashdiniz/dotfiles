@@ -118,6 +118,11 @@ _G.packer_plugins = {
     path = "/home/yash/.local/share/nvim/site/pack/packer/opt/copilot",
     url = "https://github.com/zbirenbaum/copilot.lua"
   },
+  ["dart-vim-plugin"] = {
+    loaded = true,
+    path = "/home/yash/.local/share/nvim/site/pack/packer/start/dart-vim-plugin",
+    url = "https://github.com/dart-lang/dart-vim-plugin"
+  },
   ["dressing.nvim"] = {
     loaded = true,
     path = "/home/yash/.local/share/nvim/site/pack/packer/start/dressing.nvim",
@@ -127,6 +132,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/yash/.local/share/nvim/site/pack/packer/start/flutter-tools.nvim",
     url = "https://github.com/akinsho/flutter-tools.nvim"
+  },
+  ["fzf.vim"] = {
+    loaded = true,
+    path = "/home/yash/.local/share/nvim/site/pack/packer/start/fzf.vim",
+    url = "https://github.com/junegunn/fzf.vim"
   },
   ["gitsigns.nvim"] = {
     loaded = true,
@@ -178,6 +188,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/yash/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
+  },
+  ["nvim-dap"] = {
+    loaded = true,
+    path = "/home/yash/.local/share/nvim/site/pack/packer/start/nvim-dap",
+    url = "https://github.com/mfussenegger/nvim-dap"
+  },
+  ["nvim-dap-ui"] = {
+    loaded = true,
+    path = "/home/yash/.local/share/nvim/site/pack/packer/start/nvim-dap-ui",
+    url = "https://github.com/rcarriga/nvim-dap-ui"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -287,6 +307,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/yash/.local/share/nvim/site/pack/packer/start/zen-mode.nvim",
     url = "https://github.com/folke/zen-mode.nvim"
+  },
+  ["zoxide.vim"] = {
+    loaded = true,
+    path = "/home/yash/.local/share/nvim/site/pack/packer/start/zoxide.vim",
+    url = "https://github.com/nanotee/zoxide.vim"
   }
 }
 
@@ -301,12 +326,12 @@ time([[Conditional loading of telescope-fzf-native.nvim]], true)
 time([[Conditional loading of telescope-fzf-native.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
-vim.cmd [[ packadd nvim-treesitter ]]
-vim.cmd [[ packadd nvim-treesitter-textobjects ]]
-vim.cmd [[ packadd lsp-zero ]]
-vim.cmd [[ packadd rust.vim ]]
 vim.cmd [[ packadd vim-fugitive ]]
 vim.cmd [[ packadd vim-rhubarb ]]
+vim.cmd [[ packadd lsp-zero ]]
+vim.cmd [[ packadd rust.vim ]]
+vim.cmd [[ packadd nvim-treesitter ]]
+vim.cmd [[ packadd nvim-treesitter-textobjects ]]
 time([[Sequenced loading]], false)
 
 -- Command lazy-loads

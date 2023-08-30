@@ -16,6 +16,12 @@ require('packer').startup(function(use)
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable 'make' == 1 }
+  use {
+    'nanotee/zoxide.vim',
+    requires = {
+      'junegunn/fzf.vim',
+    }
+  }
 
   -- colorscheme onedark
   use {
@@ -104,6 +110,7 @@ require('packer').startup(function(use)
     requires = {
       'nvim-lua/plenary.nvim',
       'stevearc/dressing.nvim', -- optional for vim.ui.select
+      'dart-lang/dart-vim-plugin',
     },
   }
 
