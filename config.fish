@@ -104,3 +104,6 @@ end
 function fcsa
     cd ~/Workspaces/personal/measure_app $argv
 end
+
+# custom functions
+zoxide init fish | source
