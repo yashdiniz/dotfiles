@@ -111,3 +111,11 @@ zoxide init fish | source
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
+
+# cursor
+function code
+    ~/Applications/cursor-0.10.4.AppImage
+end
+function cursor
+    ~/Applications/cursor-0.10.4.AppImage
+end
