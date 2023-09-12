@@ -47,20 +47,19 @@ lsp.on_attach(function(_, bufnr)
     ['<c-k>'] = { vim.lsp.buf.signature_help, 'Signature Documentation' },
     ['[d'] = { vim.diagnostic.goto_prev, 'Go to previous diagnostic issue in buffer' },
     [']d'] = { vim.diagnostic.goto_next, 'Go to next diagnostic issue in buffer' },
+    g = {
+      name = 'LSP: Goto',
+      d = { vim.lsp.buf.definition, '[g]oto [d]efinition' },
+      r = { builtin.lsp_references, '[g]oto [r]eferences' },
+      D = { vim.lsp.buf.declaration, '[g]oto [D]eclaration' },
+      I = { vim.lsp.buf.implementation, '[g]oto [I]mplementation' },
+    },
     ['<leader>'] = {
       e = { vim.diagnostic.open_float, 'LSP: Open diagnostics' },
       q = { vim.diagnostic.setloclist, 'LSP: Open diagnostics in loclist' },
 
       rn = { vim.lsp.buf.rename, 'LSP: [r]e[n]ame' },
       ca = { vim.lsp.buf.code_action, 'LSP: [c]ode [a]ction' },
-
-      g = {
-        name = 'LSP: Goto',
-        d = { vim.lsp.buf.definition, '[g]oto [d]efinition' },
-        r = { builtin.lsp_references, '[g]oto [r]eferences' },
-        D = { vim.lsp.buf.declaration, '[g]oto [D]eclaration' },
-        I = { vim.lsp.buf.implementation, '[g]oto [I]mplementation' },
-      },
 
       D = { vim.lsp.buf.type_definition, 'LSP: Type [D]efinition' },
       ds = { builtin.lsp_document_symbols, 'LSP: [d]ocument [s]ymbols' },
