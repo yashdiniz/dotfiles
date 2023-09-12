@@ -131,24 +131,35 @@ require('packer').startup(function(use)
     requires = { 'folke/twilight.nvim' },
   }
 
-  -- copilot!
-  use {
-    'zbirenbaum/copilot.lua',
-    as = 'copilot',
-    cmd = 'Copilot',
-    event = 'InsertEnter',
+  -- GPT
+  use({
+    "jackMort/ChatGPT.nvim",
     config = function()
-      require('copilot').setup {
-        suggestion = {
-          auto_trigger = true,
-          keymap = {
-            accept = '<C-j>',
-          }
-        }
-      }
-    end
-  }
-
+      require("chatgpt").setup()
+    end,
+    requires = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim"
+    }
+  })
+  -- copilot!
+  -- use {
+  --   'zbirenbaum/copilot.lua',
+  --   as = 'copilot',
+  --   cmd = 'Copilot',
+  --   event = 'InsertEnter',
+  --   config = function()
+  --     require('copilot').setup {
+  --       suggestion = {
+  --         auto_trigger = true,
+  --         keymap = {
+  --           accept = '<C-j>',
+  --         }
+  --       }
+  --     }
+  --   end
+  -- }
   -- use {
   --   'zbirenbaum/copilot-cmp',
   --   after = { 'copilot.lua' },
