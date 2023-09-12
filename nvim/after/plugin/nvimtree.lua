@@ -43,7 +43,7 @@ local options = {
         },
         git = {
           unstaged = "U✗", -- "✗",
-          staged = "A✓",  -- "✓",
+          staged = "A✓", -- "✓",
           unmerged = "",
           renamed = "R➜", -- "➜",
           untracked = "U★", -- "★",
@@ -85,8 +85,12 @@ local options = {
 
 vim.g.nvimtree_side = options.view.side
 
-vim.keymap.set('n', '<C-n>', '<cmd>NvimTreeToggle<CR>', { desc = 'Toggle NvimTree' })
-vim.keymap.set('n', '<leader>f', '<cmd>NvimTreeFocus<CR>', { desc = '[f]ocus NvimTree' })
-vim.keymap.set('n', '<leader>r', '<cmd>NvimTreeRefresh<CR>', { desc = '[r]efresh NvimTree' })
-
+local wk = require('which-key')
+wk.register({
+  ['<c-n>'] = { '<cmd>NvimTreeToggle<cr>', 'Toggle NvimTree' },
+  ['<leader>'] = {
+    f = { '<cmd>NvimTreeFocus<cr>', '[f]ocus NvimTree' },
+    r = { '<cmd>NvimTreeRefresh<cr>', '[r]efresh NvimTree' },
+  }
+})
 nvimtree.setup(options)

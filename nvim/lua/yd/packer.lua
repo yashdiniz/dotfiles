@@ -10,6 +10,16 @@ require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
+  -- which key
+  use {
+    "folke/which-key.nvim",
+    config = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+      require("which-key").setup()
+    end
+  }
+
   -- telescope.nvim
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.x',

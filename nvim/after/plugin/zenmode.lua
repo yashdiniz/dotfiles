@@ -8,4 +8,9 @@ require('zen-mode').setup {
     }
 }
 
-vim.keymap.set('n', '<leader>z', [[<cmd>ZenMode<CR>]], { noremap = true, silent = true })
+local wk = require('which-key')
+wk.register({
+    ['<leader>'] = {
+        z = { [[<cmd>ZenMode<CR>]], "Toggle Zenmode", noremap = true, silent = true }
+    }
+})

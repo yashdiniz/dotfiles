@@ -1,1 +1,6 @@
-vim.keymap.set('n', '<leader>u', function() vim.cmd[[UndotreeToggle]] end)
+local wk = require('which-key')
+wk.register({
+    ['<leader>'] = {
+        u = { [[<cmd>UndotreeToggle<cr>]], "Toggle Undotree pane" }
+    }
+})
