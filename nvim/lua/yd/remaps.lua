@@ -22,7 +22,7 @@ vim.keymap.set('n', 'N', "Nzz")
 wk.register({
   ['<leader>'] = {
     p = { '\"_dP', '[P]ut while maintaining current buffer', mode = 'x' },
-    d = { '\"_d', '[D]elete while maintaining current buffer', mode = { 'n', 'v' } },
+    -- d = { '\"_d', '[D]elete while maintaining current buffer', mode = { 'n', 'v' } },
     y = { '\"+y', '[Y]ank to system clipboard', mode = { 'n', 'v' } },
     Y = { '\"+Y', '[Y]ank line to system clipboard' },
     x = { [[<cmd>bd<cr>]], 'Close a buffer' },
