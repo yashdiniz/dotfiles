@@ -39,44 +39,48 @@ lsp.configure('gopls', {
 })
 
 lsp.on_attach(function(_, bufnr)
-  local nmap = function(keys, func, desc)
-    if desc then
-      desc = 'LSP: ' .. desc
-    end
-    vim.keymap.set('n', keys, func, { buffer = bufnr, remap = false, desc = desc })
-  end
+  local builtin = require('telescope.builtin')
+  local wk = require('which-key')
+  wk.register({
+    -- See `:help K` for why this keymap
+    ['K'] = { vim.lsp.buf.hover, 'Hover Documentation' },
+    ['<c-k>'] = { vim.lsp.buf.signature_help, 'Signature Documentation' },
+    ['[d'] = { vim.diagnostic.goto_prev, 'Go to previous diagnostic issue in buffer' },
+    [']d'] = { vim.diagnostic.goto_next, 'Go to next diagnostic issue in buffer' },
+    ['<leader>'] = {
+      e = { vim.diagnostic.open_float, 'LSP: Open diagnostics' },
+      q = { vim.diagnostic.setloclist, 'LSP: Open diagnostics in loclist' },
 
-  nmap('<leader>e', vim.diagnostic.open_float, 'Open diagnostics')
-  nmap('<leader>q', vim.diagnostic.setloclist, 'Open diagnostics in loclist')
-  nmap('[d', vim.diagnostic.goto_prev, 'Go to previous diagnostic issue in buffer')
-  nmap(']d', vim.diagnostic.goto_next, 'Go to next diagnostic issue in buffer')
+      rn = { vim.lsp.buf.rename, 'LSP: [r]e[n]ame' },
+      ca = { vim.lsp.buf.code_action, 'LSP: [c]ode [a]ction' },
 
-  nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
-  nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
+      g = {
+        name = 'LSP: Goto',
+        d = { vim.lsp.buf.definition, '[g]oto [d]efinition' },
+        r = { builtin.lsp_references, '[g]oto [r]eferences' },
+        D = { vim.lsp.buf.declaration, '[g]oto [D]eclaration' },
+        I = { vim.lsp.buf.implementation, '[g]oto [I]mplementation' },
+      },
 
-  nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
-  nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
-  nmap('gI', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
-  nmap('<leader>D', vim.lsp.buf.type_definition, 'Type [D]efinition')
-  nmap('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
-  nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
+      D = { vim.lsp.buf.type_definition, 'LSP: Type [D]efinition' },
+      ds = { builtin.lsp_document_symbols, 'LSP: [d]ocument [s]ymbols' },
 
-  -- See `:help K` for why this keymap
-  nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
-  nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
-
-  -- Lesser used LSP functionality
-  nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
-  nmap('<leader>wa', vim.lsp.buf.add_workspace_folder, '[W]orkspace [A]dd Folder')
-  nmap('<leader>wr', vim.lsp.buf.remove_workspace_folder, '[W]orkspace [R]emove Folder')
-  nmap('<leader>wl', function()
-    print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-  end, '[W]orkspace [L]ist Folders')
+      w = {
+        name = 'LSP: Workspace',
+        s = { builtin.lsp_dynamic_workspace_symbols, '[w]orkspace [s]ymbols' },
+        a = { vim.lsp.buf.add_workspace_folder, '[w]orkspace [a]dd folder' },
+        r = { vim.lsp.buf.remove_workspace_folder, '[w]orkspace [r]emove folder' },
+        l = { function()
+          print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+        end, '[w]orkspace [l]ist folders' }
+      },
+    },
+  })
 
   -- Custom goimports function
   local function go_org_imports(wait_ms)
     local params = vim.lsp.util.make_range_params()
-    params.context = {only = {"source.organizeImports"}}
+    params.context = { only = { "source.organizeImports" } }
     local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params, wait_ms)
     for cid, res in pairs(result or {}) do
       for _, r in pairs(res.result or {}) do
@@ -98,7 +102,7 @@ lsp.on_attach(function(_, bufnr)
   end, { desc = 'Format current buffer with LSP' })
 
   -- Create an autocommand that runs `:Format` on save
-  vim.api.nvim_create_augroup('lsp', {clear = true})
+  vim.api.nvim_create_augroup('lsp', { clear = true })
   vim.api.nvim_create_autocmd('BufWritePre', {
     group = 'lsp',
     callback = function()
