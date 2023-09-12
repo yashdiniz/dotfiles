@@ -32,6 +32,7 @@ wk.register({
     end, '[/] Fuzzily search in current buffer' },
 
     s = {
+      name = 'Search',
       f = { builtin.find_files, '[s]earch [f]iles' },
       h = { builtin.help_tags, '[s]earch [h]elp' },
       w = { builtin.grep_string, '[s]earch current [w]ord' },
