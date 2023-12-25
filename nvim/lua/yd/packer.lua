@@ -154,22 +154,22 @@ require('packer').startup(function(use)
     }
   })
   -- copilot!
-  use {
-    'zbirenbaum/copilot.lua',
-    as = 'copilot',
-    cmd = 'Copilot',
-    event = 'InsertEnter',
-    config = function()
-      require('copilot').setup {
-        suggestion = {
-          auto_trigger = true,
-          keymap = {
-            accept = '<C-j>',
-          }
-        }
-      }
-    end
-  }
+  -- use {
+  --   'zbirenbaum/copilot.lua',
+  --   as = 'copilot',
+  --   cmd = 'Copilot',
+  --   event = 'InsertEnter',
+  --   config = function()
+  --     require('copilot').setup {
+  --       suggestion = {
+  --         auto_trigger = true,
+  --         keymap = {
+  --           accept = '<C-j>',
+  --         }
+  --       }
+  --     }
+  --   end
+  -- }
   -- use {
   --   'zbirenbaum/copilot-cmp',
   --   after = { 'copilot.lua' },
