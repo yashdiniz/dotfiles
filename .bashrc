@@ -124,6 +124,7 @@ export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 export ANDROID_HOME=$HOME/Android/Sdk
 export GOPATH=$HOME/go
+export GOPRIVATE=github.com/spykesocial/*
 export NODE_PATH=$HOME/.npm/lib/node_modules:$NODE_PATH
 export PATH=$PATH:$HOME/.npm/bin
 export PATH=$PATH:/opt/go/bin:$GOPATH/bin
@@ -155,4 +156,3 @@ unset __conda_setup
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
   exec tmux
 fi
-
