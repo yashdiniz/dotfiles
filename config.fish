@@ -99,6 +99,22 @@ end
 function sga 
     cd ~/Workspaces/spyke/spyke-gateway $argv
 end
+# approach aliases
+function alp
+    cd ~/Workspaces/spyke/approach-landing-page $argv
+end
+function afr
+    cd ~/Workspaces/spyke/approach-frontend $argv
+end
+function aba
+    cd ~/Workspaces/spyke/approach-backend $argv
+end
+function gcf
+    cd ~/Workspaces/spyke/get-creative-goa-frontend $argv
+end
+function gcb
+    cd ~/Workspaces/spyke/get-creative-goa-backend $argv
+end
 
 # personal stuff
 function blog
@@ -107,6 +123,12 @@ end
 function fcsa
     cd ~/Workspaces/personal/measure_app $argv
 end
+function bs
+    cd ~/Workspaces/personal/bee-slap $argv
+end
+function aoc
+    cd ~/Workspaces/personal/aoc2023 $argv
+end
 
 # custom functions
 zoxide init fish | source
@@ -114,3 +136,8 @@ zoxide init fish | source
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+eval /home/yash/miniconda3/bin/conda "shell.fish" "hook" $argv | source
+# <<< conda initialize <<<
