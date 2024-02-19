@@ -17,21 +17,23 @@
 [merge]
 	tool = nvim
 	conflictstyle = diff3
-[mergetool "nvim"]
-	# https://www.grzegorowski.com/using-vim-or-neovim-nvim-as-a-git-mergetool
-	cmd = nvim -f -c \"Gdiffsplit!\" \"$MERGED\"
-	trustExitCode = false
+[rerere]
+	enabled = true
+[alias]
+	cblame = blame -w -C -C -C
 [pull]
 	rebase = false
-
+[init]
+	defaultBranch = main
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
 ; [remote "origin"]
 	; tagopt = --tags
 	; fetch = +refs/heads/*:refs/remotes/origin/*
 	; push = +refs/heads/*:refs/remotes/origin/*
 	; push = +refs/archive/*:refs/archive/*
 	; fetch = +refs/archive/*:refs/archive/*
-[init]
-	defaultBranch = main
-
-[url "ssh://git@github.com/"]
-	insteadOf = https://github.com/
+[mergetool "nvim"]
+	# https://www.grzegorowski.com/using-vim-or-neovim-nvim-as-a-git-mergetool
+	cmd = nvim -f -c \"Gdiffsplit!\" \"$MERGED\"
+	trustExitCode = false
