@@ -1,7 +1,7 @@
 # Linux customizations
 
 Make sure to install neovim >= 0.8.x.
-Also make sure to install `tmux`, `ripgrep`, `powerline-fonts`, `tree-sitter-cli` and `fzf`.
+Also make sure to install `tmux`, `zoxide`, `ripgrep`, `powerline-fonts`, `tree-sitter-cli` and `fzf`.
 
 ## References
 

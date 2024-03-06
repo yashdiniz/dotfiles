@@ -84,37 +84,6 @@ end
 function s
     cd ~/Workspaces/spyke $argv
 end
-function smom
-    cd ~/Workspaces/spyke/minutes-of-meetings $argv
-end
-function sna
-    cd ~/Workspaces/spyke/Spyke-FrontEnd $argv
-end
-function slp
-    cd ~/Workspaces/spyke/spyke-landing-page $argv
-end
-function swa
-    cd ~/Workspaces/spyke/Spyke-Web-App $argv
-end
-function sga 
-    cd ~/Workspaces/spyke/spyke-gateway $argv
-end
-# approach aliases
-function alp
-    cd ~/Workspaces/spyke/approach-landing-page $argv
-end
-function afr
-    cd ~/Workspaces/spyke/approach-frontend $argv
-end
-function aba
-    cd ~/Workspaces/spyke/approach-backend $argv
-end
-function gcf
-    cd ~/Workspaces/spyke/get-creative-goa-frontend $argv
-end
-function gcb
-    cd ~/Workspaces/spyke/get-creative-goa-backend $argv
-end
 
 # personal stuff
 function blog
