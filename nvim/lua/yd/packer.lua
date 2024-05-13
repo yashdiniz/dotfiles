@@ -142,17 +142,17 @@ require('packer').startup(function(use)
   }
 
   -- GPT
-  use({
-    "jackMort/ChatGPT.nvim",
-    config = function()
-      require("chatgpt").setup()
-    end,
-    requires = {
-      "MunifTanjim/nui.nvim",
-      "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope.nvim"
-    }
-  })
+  -- use({
+  --   "jackMort/ChatGPT.nvim",
+  --   config = function()
+  --     require("chatgpt").setup()
+  --   end,
+  --   requires = {
+  --     "MunifTanjim/nui.nvim",
+  --     "nvim-lua/plenary.nvim",
+  --     "nvim-telescope/telescope.nvim"
+  --   }
+  -- })
   -- copilot!
   -- use {
   --   'zbirenbaum/copilot.lua',
@@ -177,6 +177,18 @@ require('packer').startup(function(use)
   --     require("copilot_cmp").setup()
   --   end
   -- }
+  use({
+    "olimorris/codecompanion.nvim",
+    config = function()
+      require("codecompanion").setup()
+    end,
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-telescope/telescope.nvim", -- Optional
+      "stevearc/dressing.nvim"         -- Optional: Improves the default Neovim UI
+    }
+  })
 end)
 
 -- run PackerSync on first time install
