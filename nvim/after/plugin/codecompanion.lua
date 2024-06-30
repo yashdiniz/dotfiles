@@ -9,13 +9,19 @@ require("codecompanion").setup({
             },
         }),
         openai = require("codecompanion.adapters").use("openai", {
+            schema = {
+                model = {
+                    default = "gpt-4o",
+                },
+            },
             env = {
                 api_key = "cmd:gpg --decrypt " .. home .. "/oai-secret.env.gpg",
             },
         }),
     },
     strategies = {
-        chat = "anthropic",
-        inline = "anthropic"
+        chat = "openai",
+        inline = "openai",
+        tool = "openai"
     },
 })
