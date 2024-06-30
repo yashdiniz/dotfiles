@@ -19,6 +19,10 @@ require('packer').startup(function(use)
       require("which-key").setup()
     end
   }
+  -- flash
+  use {
+    'folke/flash.nvim',
+  }
 
   -- telescope.nvim
   use {
