@@ -5,7 +5,7 @@ lsp.preset('recommended')
 
 -- Feel free to add/remove any LSPs that you want here. They will automatically be installed
 lsp.ensure_installed({
-  'tsserver',
+  'ts_ls',
   'eslint',
   'lua_ls',
   'dockerls',
