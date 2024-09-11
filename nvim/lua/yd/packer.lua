@@ -119,14 +119,14 @@ require('packer').startup(function(use)
   }
 
   -- flutter
-  use {
-    'akinsho/flutter-tools.nvim',
-    requires = {
-      'nvim-lua/plenary.nvim',
-      'stevearc/dressing.nvim', -- optional for vim.ui.select
-      'dart-lang/dart-vim-plugin',
-    },
-  }
+  -- use {
+  --   'akinsho/flutter-tools.nvim',
+  --   requires = {
+  --     'nvim-lua/plenary.nvim',
+  --     'stevearc/dressing.nvim', -- optional for vim.ui.select
+  --     'dart-lang/dart-vim-plugin',
+  --   },
+  -- }
 
   -- thePrimeagen's harpoon
   use('theprimeagen/harpoon')
@@ -181,18 +181,24 @@ require('packer').startup(function(use)
   --     require("copilot_cmp").setup()
   --   end
   -- }
-  use({
-    "olimorris/codecompanion.nvim",
+  -- use({
+  --   "olimorris/codecompanion.nvim",
+  --   config = function()
+  --     require("codecompanion").setup()
+  --   end,
+  --   requires = {
+  --     "nvim-lua/plenary.nvim",
+  --     "nvim-treesitter/nvim-treesitter",
+  --     "nvim-telescope/telescope.nvim", -- Optional
+  --     "stevearc/dressing.nvim"         -- Optional: Improves the default Neovim UI
+  --   }
+  -- })
+  use {
+    "supermaven-inc/supermaven-nvim",
     config = function()
-      require("codecompanion").setup()
-    end,
-    requires = {
-      "nvim-lua/plenary.nvim",
-      "nvim-treesitter/nvim-treesitter",
-      "nvim-telescope/telescope.nvim", -- Optional
-      "stevearc/dressing.nvim"         -- Optional: Improves the default Neovim UI
-    }
-  })
+      require("supermaven-nvim").setup({})
+    end
+  }
 end)
 
 -- run PackerSync on first time install
