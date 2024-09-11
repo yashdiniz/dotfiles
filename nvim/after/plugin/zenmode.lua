@@ -9,8 +9,6 @@ require('zen-mode').setup {
 }
 
 local wk = require('which-key')
-wk.register({
-    ['<leader>'] = {
-        z = { [[<cmd>ZenMode<CR>]], "Toggle Zenmode", noremap = true, silent = true }
-    }
+wk.add({
+    { '<leader>z', [[<cmd>ZenMode<CR>]], desc = 'Toggle Zenmode', remap = false, silent = true },
 })

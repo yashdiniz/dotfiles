@@ -1,11 +1,9 @@
 local f = require('flash')
 local wk = require('which-key')
-wk.register {
-    ["<leader>"] = {
-        s = { f.jump, "Flash", mode = { "n", "x", "o" } },
-        S = { f.treesitter, "Flash Treesitter", mode = { "n", "x", "o" } },
-        r = { f.remote, "Remote Flash", mode = "o" },
-        R = { f.treesitter_search, "Treesitter Search", mode = { "o", "x" } },
-    },
-    ['<c-s>'] = { f.toggle, "Toggle Flash Search", mode = { "c" } },
-}
+wk.add({
+    { '<leader>s', f.jump,              desc = 'Flash',               mode = { 'n', 'x', 'o' } },
+    { '<leader>S', f.treesitter,        desc = 'Flash Treesitter',    mode = { 'n', 'x', 'o' } },
+    { '<leader>r', f.remote,            desc = 'Remote Flash',        mode = 'o' },
+    { '<leader>R', f.treesitter_search, desc = 'Treesitter Search',   mode = { 'o', 'x' } },
+    { '<c-s>',     f.toggle,            desc = 'Toggle Flash Search', mode = { 'c' } },
+})

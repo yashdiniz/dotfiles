@@ -1,6 +1,4 @@
 local wk = require('which-key')
-wk.register({
-    ['<leader>'] = {
-        u = { [[<cmd>UndotreeToggle<cr>]], "Toggle Undotree pane" }
-    }
+wk.add({
+    { '<leader>u', [[<cmd>UndotreeToggle<cr>]], desc = 'Toggle Undotree pane' },
 })

@@ -19,25 +19,25 @@ pcall(require('telescope').load_extension, 'fzf')
 local builtin = require('telescope.builtin')
 
 local wk = require('which-key')
-wk.register({
-  ['<leader>'] = {
-    ['?'] = { builtin.oldfiles, '[?] Find recently opened files' },
-    ['<space>'] = { builtin.buffers, '[ ] Find existing buffers' },
-    ['/'] = { function()
+wk.add({
+  { '<leader>?',       builtin.oldfiles, desc = '[?] Find recently opened files' },
+  { '<leader><space>', builtin.buffers,  desc = '[ ] Find existing buffers' },
+  {
+    '<leader>/',
+    function()
       -- You can pass additional configuration to telescope to change theme, layout, etc.
       require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
         winblend = 10,
         previewer = false,
       })
-    end, '[/] Fuzzily search in current buffer' },
-
-    s = {
-      name = 'Search',
-      f = { builtin.find_files, '[s]earch [f]iles' },
-      h = { builtin.help_tags, '[s]earch [h]elp' },
-      w = { builtin.grep_string, '[s]earch current [w]ord' },
-      g = { builtin.live_grep, '[s]earch by [g]rep' },
-      d = { builtin.diagnostics, '[s]earch [d]iagnostics' },
-    }
+    end,
+    desc = '[/] Fuzzily search in current buffer'
   },
+
+  { '<leader>s',  group = 'Search' },
+  { '<leader>sf', builtin.find_files,  desc = '[s]earch [f]iles' },
+  { '<leader>sh', builtin.help_tags,   desc = '[s]earch [h]elp' },
+  { '<leader>sw', builtin.grep_string, desc = '[s]earch current [w]ord' },
+  { '<leader>sg', builtin.live_grep,   desc = '[s]earch by [g]rep' },
+  { '<leader>sd', builtin.diagnostics, desc = '[s]earch [d]iagnostics' },
 })

@@ -86,11 +86,9 @@ local options = {
 vim.g.nvimtree_side = options.view.side
 
 local wk = require('which-key')
-wk.register({
-  ['<c-n>'] = { '<cmd>NvimTreeToggle<cr>', 'Toggle NvimTree' },
-  ['<leader>'] = {
-    f = { '<cmd>NvimTreeFocus<cr>', '[f]ocus NvimTree' },
-    r = { '<cmd>NvimTreeRefresh<cr>', '[r]efresh NvimTree' },
-  }
+wk.add({
+  { '<c-n>',     [[<cmd>NvimTreeToggle<cr>]],  desc = 'Toggle NvimTree' },
+  { '<leader>f', [[<cmd>NvimTreeFocus<cr>]],   desc = '[f]ocus NvimTree' },
+  { '<leader>r', [[<cmd>NvimTreeRefresh<cr>]], desc = '[r]efresh NvimTree' },
 })
 nvimtree.setup(options)

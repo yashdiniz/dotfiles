@@ -8,6 +8,8 @@
 -- })
 --
 -- local wk = require('which-key')
+-- wk.add()
+-- TODO: Add keybindings to the new which-key standard
 -- wk.register({
 --     ['<leader>c'] = {
 --         name = "ChatGPT",
