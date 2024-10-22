@@ -1,7 +1,12 @@
 vim.opt.signcolumn = 'yes' -- Reserve space for diagnostic icons
 
 local lsp = require('lsp-zero')
-lsp.preset('recommended')
+lsp.preset({
+  name = 'minimal',
+  set_lsp_keymaps = true,
+  manage_nvim_cmp = true,
+  suggest_lsp_servers = false,
+})
 
 -- Feel free to add/remove any LSPs that you want here. They will automatically be installed
 lsp.ensure_installed({
@@ -42,16 +47,15 @@ lsp.configure('gopls', {
 -- prevents conflicts with between denols and ts_ls
 lsp.configure('denols', {
   root_dir = function()
-    return lsp.dir.find_first({ 'deno.jsonc', 'deno.json' })
+    return lsp.dir.find_first({ 'deno.json', 'deno.jsonc' })
   end
 })
 lsp.configure('ts_ls', {
   single_file_support = false,
   root_dir = function()
-    return lsp.dir.find_first({ 'package.json', 'node_modules' })
+    return lsp.dir.find_first({ 'package.json' })
   end
 })
-
 
 lsp.on_attach(function(_, bufnr)
   local builtin = require('telescope.builtin')
