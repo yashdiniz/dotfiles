@@ -6,6 +6,7 @@ lsp.preset('recommended')
 -- Feel free to add/remove any LSPs that you want here. They will automatically be installed
 lsp.ensure_installed({
   'ts_ls',
+  'denols',
   'eslint',
   'lua_ls',
   'dockerls',
@@ -37,6 +38,20 @@ lsp.configure('gopls', {
     },
   },
 })
+
+-- prevents conflicts with between denols and ts_ls
+lsp.configure('denols', {
+  root_dir = function()
+    return lsp.dir.find_first({ 'deno.jsonc', 'deno.json' })
+  end
+})
+lsp.configure('ts_ls', {
+  single_file_support = false,
+  root_dir = function()
+    return lsp.dir.find_first({ 'package.json', 'node_modules' })
+  end
+})
+
 
 lsp.on_attach(function(_, bufnr)
   local builtin = require('telescope.builtin')
