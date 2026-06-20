@@ -108,15 +108,15 @@ require('packer').startup(function(use)
   }
 
   -- rust
-  use {
-    'rust-lang/rust.vim',
-    after = 'lsp-zero'
-  }
-
-  -- rescript
-  use {
-    'rescript-lang/vim-rescript',
-  }
+  -- use {
+  --   'rust-lang/rust.vim',
+  --   after = 'lsp-zero'
+  -- }
+  --
+  -- -- rescript
+  -- use {
+  --   'rescript-lang/vim-rescript',
+  -- }
 
   -- flutter
   -- use {

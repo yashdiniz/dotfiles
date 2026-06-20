@@ -63,8 +63,8 @@ lsp.on_attach(function(_, bufnr)
   wk.add({
     { 'K',          vim.lsp.buf.hover,                     desc = 'Hover Documentation' },
     { '<c-k>',      vim.lsp.buf.signature_help,            desc = 'Signature Documentation' },
-    { '[d',         vim.diagnostic.goto_prev,              desc = 'Go to previous diagnostic issue in buffer' },
-    { ']d',         vim.diagnostic.goto_next,              desc = 'Go to next diagnostic issue in buffer' },
+    { '[d',         vim.diagnostic.jump({ count = -1 }),   desc = 'Go to previous diagnostic issue in buffer' },
+    { ']d',         vim.diagnostic.jump({ count = 1 }),    desc = 'Go to next diagnostic issue in buffer' },
 
     { 'g',          group = 'LSP: Goto' },
     { 'gd',         vim.lsp.buf.definition,                desc = '[g]oto [d]efinition' },
