@@ -73,7 +73,11 @@ esac
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
-	test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+	if test -r ~/.dircolors; then
+		eval "$(dircolors -b ~/.dircolors)"
+	else
+		eval "$(dircolors -b)"
+	fi
 	alias ls='ls --color=auto'
 	#alias dir='dir --color=auto'
 	#alias vdir='vdir --color=auto'
@@ -99,8 +103,8 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
 if [ -f ~/.bash_aliases ]; then
+	# shellcheck source=/dev/null
 	. ~/.bash_aliases
 fi
 
@@ -134,13 +138,13 @@ export PATH=$PATH:/opt/flutter/bin
 export PATH=$PATH:/opt/android-studio/bin
 export PATH=$PATH:/usr/lib/dart/bin
 
-[ -f ~/.fzf.bash ] && source "~/.fzf.bash"
+# shellcheck source=/dev/null
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 source /home/yash/linux-customizations/alacritty_git/extra/completions/alacritty.bash
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/yash/miniconda3/bin/conda' 'shell.bash' 'hook' 2>/dev/null)"
-if [ $? -eq 0 ]; then
+if __conda_setup="$('/home/yash/miniconda3/bin/conda' 'shell.bash' 'hook' 2>/dev/null)"; then
 	eval "$__conda_setup"
 else
 	if [ -f "/home/yash/miniconda3/etc/profile.d/conda.sh" ]; then

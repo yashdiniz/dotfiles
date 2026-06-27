@@ -52,23 +52,8 @@ function dy
 end
 
 # aliases for terminal convenience
-function ga
-    command git add $argv
-end
-function gc
-    command git commit -S $argv
-end
-function gd
-    command git diff $argv
-end
 function gg
     command lazygit $argv
-end
-function gst
-    command git status $argv
-end
-function tmux
-    command tmux -u $argv
 end
 
 # vim aliases to neovim
@@ -89,18 +74,6 @@ end
 function blog
     cd ~/Workspaces/personal/yashdiniz.github.io $argv
 end
-function fcsa
-    cd ~/Workspaces/personal/measure_app $argv
-end
-function bs
-    cd ~/Workspaces/personal/bee-slap $argv
-end
-function aoc
-    cd ~/Workspaces/personal/aoc2023 $argv
-end
-
-# custom functions
-zoxide init fish | source
 
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
@@ -110,3 +83,6 @@ set --export PATH $BUN_INSTALL/bin $PATH
 # !! Contents within this block are managed by 'conda init' !!
 eval /home/yash/miniconda3/bin/conda "shell.fish" "hook" $argv | source
 # <<< conda initialize <<<
+
+# custom functions
+zoxide init fish | source
