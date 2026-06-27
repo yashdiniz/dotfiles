@@ -16,7 +16,11 @@ require('packer').startup(function(use)
     config = function()
       vim.o.timeout = true
       vim.o.timeoutlen = 300
-      require("which-key").setup()
+      require("which-key").setup({
+        icons = {
+          rules = false, -- disable mini.icons auto-detection rules
+        }
+      })
     end
   }
   -- flash
