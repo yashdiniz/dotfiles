@@ -77,8 +77,15 @@ lsp.on_attach(function(_, bufnr)
 
   -- Custom goimports function
   local function go_org_imports(wait_ms)
-    local params = vim.lsp.util.make_range_params()
-    params.context = { only = { "source.organizeImports" } }
+    local clients = vim.lsp.get_clients({ bufnr = 0, name = "gopls" })
+    local offset_encoding = "utf-16" -- Default fallback
+    if clients and clients[1] then
+      offset_encoding = clients[1].offset_encoding or offset_encoding
+    end
+
+    local params = vim.lsp.util.make_range_params(0, offset_encoding)
+
+    params["context"] = { only = { "source.organizeImports" } }
     local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params, wait_ms)
     for cid, res in pairs(result or {}) do
       for _, r in pairs(res.result or {}) do
