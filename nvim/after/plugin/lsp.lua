@@ -57,13 +57,9 @@ lsp.on_attach(function(_, bufnr)
     { 'gd',         vim.lsp.buf.definition,                desc = '[g]oto [d]efinition' },
     { 'gr',         builtin.lsp_references,                desc = '[g]oto [r]eferences' },
     { 'gD',         vim.lsp.buf.declaration,               desc = '[g]oto [D]eclaration' },
-    { 'gI',         vim.lsp.buf.implementation,            desc = '[g]oto [I]mplementation' },
 
     { '<leader>do', vim.diagnostic.open_float,             desc = 'LSP: Open diagnostics' },
     { '<leader>dq', vim.diagnostic.setloclist,             desc = 'LSP: Open diagnostics in loclist' },
-    { '<leader>rn', vim.lsp.buf.rename,                    desc = 'LSP: [r]e[n]ame' }, -- or <F2>
-    { '<leader>ca', vim.lsp.buf.code_action,               desc = 'LSP: [c]ode [a]ction' },
-    { '<leader>D',  vim.lsp.buf.type_definition,           desc = 'LSP: Type [D]efinition' },
     { '<leader>ds', builtin.lsp_document_symbols,          desc = 'LSP: [d]ocument [s]ymbols' },
 
     { '<leader>w',  group = 'LSP: Workspace' },

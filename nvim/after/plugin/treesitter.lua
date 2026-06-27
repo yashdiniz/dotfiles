@@ -1,31 +1,20 @@
--- https://github.com/nvim-treesitter/nvim-treesitter#modules
-require 'nvim-treesitter.configs'.setup {
-  -- A list of parser names, or "all"
-  ensure_installed = { "bash", "help", "javascript", "typescript",
-    "go", "lua", "python", "rust", "dart" },
-
-  -- Install parsers synchronously (only applied to `ensure_installed`)
-  sync_install = false,
-
-  -- Automatically install missing parsers when entering buffer
-  -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
-  auto_install = true,
-
-  indent = {
-    enable = true,
-  },
-
-  highlight = {
-    -- `false` will disable the whole extension
-    enable = true,
-    use_languagetree = true,
-
-    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-    -- Using this option may slow down your editor, and you may see some duplicate highlights.
-    -- Instead of true it can also be a list of languages
-    additional_vim_regex_highlighting = false,
-  },
-}
-
-require('nvim-treesitter.install').prefer_git = true
+-- vim.api.nvim_create_autocmd({
+--   pattern = { '*' },
+--   callback = function()
+--     -- Only start treesitter if a valid parser is installed for the file type
+--     local lang = vim.treesitter.language.get_lang(vim.bo.filetype)
+--     if lang and pcall(vim.treesitter.start) then
+--       -- Treesitter successfully started
+--     else
+--       vim.cmd('syntax on') -- Fallback to legacy regex syntax
+--     end
+--   end,
+-- }, 'FileType')
+--
+-- -- Set up treesitter-based indentation using the rewritten plugin API:
+-- vim.api.nvim_create_autocmd('FileType', {
+--   pattern = { '*' },
+--   callback = function()
+--     vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+--   end,
+-- })
