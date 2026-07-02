@@ -1,49 +1,3 @@
-# setting up informative fit promot for fish
-# https://fishshell.com/docs/current/cmds/fish_git_prompt.html
-set -g __fish_git_prompt_show_informative_status true
-set -g __fish_git_prompt_showuntrackedfiles false
-set -g __fish_git_prompt_showdirtystate true
-set -g __fish_git_prompt_showupstream "informative"
-
-set -g __fish_git_prompt_char_upstream_ahead "↑"
-set -g __fish_git_prompt_char_upstream_behind "↓"
-set -g __fish_git_prompt_char_upstream_prefix ""
-set -g __fish_git_prompt_color_branch --bold magenta
-
-set -g __fish_git_prompt_char_cleanstate "✔"
-set -g __fish_git_prompt_color_cleanstate --bold green
-set -g __fish_git_prompt_char_stagedstate "●"
-set -g __fish_git_prompt_color_stagedstate yellow
-set -g __fish_git_prompt_char_dirtystate "✚"
-set -g __fish_git_prompt_color_dirtystate blue
-set -g __fish_git_prompt_char_invalidstate "✖"
-set -g __fish_git_prompt_color_invalidstate red
-
-if status is-interactive
-    # Commands to run in interactive sessions can go here
-    command inxi -PBxz
-
-    function fish_prompt -d "Custom fish prompt"
-        set_color -o
-        set -l user_emoji '👤'
-        set -l user_char '> '
-        if fish_is_root_user
-            set user_char '# '
-        end
-        printf '%s' \
-            $user_emoji \
-            (set_color $fish_color_cwd) (prompt_pwd) (set_color normal) \
-            (fish_git_prompt) \
-            (set_color $fish_color_status) "[$status]" (set_color normal) \
-            $user_char
-    end
-
-    function fish_right_prompt -d "Custom fish right prompt"
-        set_color -o
-        printf '%s' (set_color grey) (date +%b\ %e\ \'%y\,\ %R) (set_color normal)
-    end
-end
-
 # aliases
 # some cool widgets
 #alias weather="curl https://wttr.in/?format=4"
@@ -79,6 +33,8 @@ end
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
 
+starship init fish | source
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 eval /home/yash/miniconda3/bin/conda "shell.fish" "hook" $argv | source
@@ -86,3 +42,51 @@ eval /home/yash/miniconda3/bin/conda "shell.fish" "hook" $argv | source
 
 # custom functions
 zoxide init fish | source
+
+command inxi -PBxz
+
+# # setting up informative fit promot for fish
+# # https://fishshell.com/docs/current/cmds/fish_git_prompt.html
+# set -g __fish_git_prompt_show_informative_status true
+# set -g __fish_git_prompt_showuntrackedfiles false
+# set -g __fish_git_prompt_showdirtystate true
+# set -g __fish_git_prompt_showupstream "informative"
+# 
+# set -g __fish_git_prompt_char_upstream_ahead "↑"
+# set -g __fish_git_prompt_char_upstream_behind "↓"
+# set -g __fish_git_prompt_char_upstream_prefix ""
+# set -g __fish_git_prompt_color_branch --bold magenta
+# 
+# set -g __fish_git_prompt_char_cleanstate "✔"
+# set -g __fish_git_prompt_color_cleanstate --bold green
+# set -g __fish_git_prompt_char_stagedstate "●"
+# set -g __fish_git_prompt_color_stagedstate yellow
+# set -g __fish_git_prompt_char_dirtystate "✚"
+# set -g __fish_git_prompt_color_dirtystate blue
+# set -g __fish_git_prompt_char_invalidstate "✖"
+# set -g __fish_git_prompt_color_invalidstate red
+# 
+# if status is-interactive
+#     # Commands to run in interactive sessions can go here
+#     command inxi -PBxz
+# 
+#     function fish_prompt -d "Custom fish prompt"
+#         set_color -o
+#         set -l user_emoji '👤'
+#         set -l user_char '> '
+#         if fish_is_root_user
+#             set user_char '# '
+#         end
+#         printf '%s' \
+#             $user_emoji \
+#             (set_color $fish_color_cwd) (prompt_pwd) (set_color normal) \
+#             (fish_git_prompt) \
+#             (set_color $fish_color_status) "[$status]" (set_color normal) \
+#             $user_char
+#     end
+# 
+#     function fish_right_prompt -d "Custom fish right prompt"
+#         set_color -o
+#         printf '%s' (set_color grey) (date +%b\ %e\ \'%y\,\ %R) (set_color normal)
+#     end
+# end
