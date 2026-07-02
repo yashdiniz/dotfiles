@@ -46,8 +46,8 @@ window:
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
   #padding:
-  #  x: 0
-  #  y: 0
+  #  x: 5
+  #  y: 5
 
   # Spread additional padding evenly around the terminal content.
   #dynamic_padding: false
@@ -67,7 +67,7 @@ window:
   #
   # Window opacity as a floating point number from `0.0` to `1.0`.
   # The value `0.0` is completely transparent and `1.0` is opaque.
-  opacity: 0.75
+  opacity: 0.95
 
   # Startup Mode (changes require restart)
   #
@@ -78,7 +78,7 @@ window:
   #
   # Values for `startup_mode` (macOS only):
   #   - SimpleFullscreen
-  startup_mode: Maximized 
+  startup_mode: Maximized
 
   # Window title
   title: Yash's Alacritty
@@ -107,42 +107,6 @@ window:
 
 # Font configuration
 font:
-  # Bold font face
-  bold:
-    # Font family
-    #
-    # If the bold family is not specified, it will fall back to the
-    # value specified for the normal font.
-    family: MesloLGSDZ NF
-    # family: VictorMono NF
-
-    # The `style` can be specified to pick a specific face.
-    style: Bold
-
-  # Bold italic font face
-  bold_italic:
-    # Font family
-    #
-    # If the bold italic family is not specified, it will fall back to the
-    # value specified for the normal font.
-    family: MesloLGSDZ NF
-    # family: VictorMono NF
-
-    # The `style` can be specified to pick a specific face.
-    style: Bold Italic
-
-  # Italic font face
-  italic:
-    # Font family
-    #
-    # If the italic family is not specified, it will fall back to the
-    # value specified for the normal font.
-    family: MesloLGSDZ NF
-    # family: VictorMono NF
-
-    # The `style` can be specified to pick a specific face.
-    style: Italic
-
   # Normal (roman) font face
   normal:
     # Font family
@@ -151,14 +115,24 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: MesloLGSDZ NF
-    # family: VictorMono NF
+    family: MesloLGSDZ NF # family: VictorMono NF
 
     # The `style` can be specified to pick a specific face.
     style: Regular
+  # Bold font face
+  bold:
+    family: MesloLGSDZ NF # family: VictorMono NF
+    style: Bold
+  # Bold italic font face
+  bold_italic:
+    family: MesloLGSDZ NF # family: VictorMono NF
+    style: Bold Italic
+  # Italic font face
+  italic:
+    family: MesloLGSDZ NF # family: VictorMono NF
+    style: Italic
 
-  # Point size
-  # size: 11.0
+  # size: 10.0 # Point size
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
@@ -335,7 +309,7 @@ font:
 # Bell
 #
 # The bell is rung every time the BEL control character is received.
-#bell:
+bell:
   # Visual Bell Animation
   #
   # Animation effect for flashing the screen when the visual bell is rung.
@@ -351,14 +325,14 @@ font:
   #   - EaseOutExpo
   #   - EaseOutCirc
   #   - Linear
-  #animation: EaseOutExpo
+  animation: EaseOutExpo
 
   # Duration of the visual bell flash in milliseconds. A `duration` of `0` will
   # disable the visual bell animation.
-  #duration: 0
+  duration: 100
 
   # Visual bell animation color.
-  #color: '#ffffff'
+  color: "#ffffff"
 
   # Bell Command
   #
@@ -434,15 +408,11 @@ font:
 #   - (Linux/BSD) user login shell
 #   - (Windows) powershell
 shell:
-  # args:
-  #   - new-session
-  #   - -A
-  #   - -D
-  #   - -s
-  #   - main
-  program: /bin/bash  # /usr/bin/tmux  
-#  args:
-#    - --login
+  program: /usr/bin/tmux
+  args:
+    - new
+    - -As
+    - yash
 
 # Startup directory
 #
