@@ -1,3 +1,6 @@
+[mise]
+disabled = false
+
 [time]
 disabled = false
 format = '[$time]($style) '

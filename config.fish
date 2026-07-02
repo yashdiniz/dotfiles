@@ -90,3 +90,5 @@ zoxide init fish | source
 #         printf '%s' (set_color grey) (date +%b\ %e\ \'%y\,\ %R) (set_color normal)
 #     end
 # end
+
+/home/yash/.local/bin/mise activate fish | source # added by https://mise.run/fish

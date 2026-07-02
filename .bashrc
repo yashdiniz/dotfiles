@@ -153,3 +153,5 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+eval "$(/home/yash/.local/bin/mise activate bash)" # added by https://mise.run/bash
