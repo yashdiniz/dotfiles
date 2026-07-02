@@ -22,8 +22,7 @@ sudo apt-get install fish
 ln -s ~/linux-customizations/config.fish ~/.config/fish/config.fish
 
 # add packer.nvim
-git clone --depth 1 https://github.com/wbthomason/packer.nvim\
- ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
 # alacritty
 git clone https://github.com/alacritty/alacritty.git alacritty_git/
@@ -36,3 +35,4 @@ ln -s ~/linux-customizations/.tmux.conf ~/.tmux.conf
 mkdir -p ~/.config
 ln -s ~/linux-customizations/alacritty ~/.config/alacritty
 ln -s ~/linux-customizations/nvim ~/.config/nvim
+ln -s ~/linux-customizations/starship.toml ~/.config/starship.toml
