@@ -332,7 +332,7 @@ bell:
   duration: 100
 
   # Visual bell animation color.
-  color: "#ffffff"
+  color: "#e7fcb8"
 
   # Bell Command
   #
@@ -410,6 +410,7 @@ bell:
 shell:
   program: /usr/bin/tmux
   args:
+    - -u
     - new
     - -As
     - yash
