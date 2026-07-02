@@ -119,8 +119,6 @@ if ! shopt -oq posix; then
 	fi
 fi
 
-inxi -PBxz
-
 # custom environment variables.
 # export GPG_TTY=$(tty)
 export LANG=en_US.UTF-8

@@ -1,3 +1,5 @@
+command inxi -PBxz
+
 # aliases
 # some cool widgets
 #alias weather="curl https://wttr.in/?format=4"
@@ -42,8 +44,6 @@ eval /home/yash/miniconda3/bin/conda "shell.fish" "hook" $argv | source
 
 # custom functions
 zoxide init fish | source
-
-command inxi -PBxz
 
 # # setting up informative fit promot for fish
 # # https://fishshell.com/docs/current/cmds/fish_git_prompt.html
