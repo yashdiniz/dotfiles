@@ -76,7 +76,6 @@ require('packer').startup(function(use)
     after = 'vim-fugitive'
   }
   use('lukas-reineke/indent-blankline.nvim') -- indentation guides
-  use('numtoStr/Comment.nvim')               -- tool to use "gc" to comment visual regions
   use('tpope/vim-sleuth')                    -- smartly detect tabstop and shiftwidth
 
   -- lsp-zero reduces a lot of the boilerplate for LSP autocomplete
