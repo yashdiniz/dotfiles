@@ -155,3 +155,15 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 eval "$(/home/yash/.local/bin/mise activate bash)" # added by https://mise.run/bash
+# lean-ctx shell hook — begin
+if [ -f "/home/yash/.config/lean-ctx/shell-hook.bash" ]; then
+. "/home/yash/.config/lean-ctx/shell-hook.bash"
+fi
+# lean-ctx shell hook — end
+
+# >>> lean-ctx agent aliases >>>
+alias claude='LEAN_CTX_AGENT=1 BASH_ENV="$HOME/.bashenv" claude'
+alias codebuddy='LEAN_CTX_AGENT=1 BASH_ENV="$HOME/.bashenv" codebuddy'
+alias codex='LEAN_CTX_AGENT=1 BASH_ENV="$HOME/.bashenv" codex'
+alias gemini='LEAN_CTX_AGENT=1 BASH_ENV="$HOME/.bashenv" gemini'
+# <<< lean-ctx agent aliases <<<
