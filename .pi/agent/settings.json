@@ -1,0 +1,38 @@
+{
+  "lastChangelogVersion": "0.80.6",
+  "defaultProvider": "google",
+  "defaultModel": "gemini-flash-lite-latest",
+  "defaultThinkingLevel": "high",
+  "enabledModels": [
+    "google/gemini-flash-latest",
+    "google/gemini-3.1-pro-preview",
+    "google/gemini-2.5-pro",
+    "google/gemini-flash-lite-latest",
+    "airouter.in/zai/glm-5.2",
+    "airouter.in/xai/grok-4.5",
+    "airouter.in/deepseek/deepseek-v4-pro",
+    "airouter.in/deepseek/deepseek-v4-flash",
+    "airouter.in/deepseek/deepseek-r1",
+    "airouter.in/anthropic/claude-sonnet-5",
+    "airouter.in/anthropic/claude-haiku-4.5",
+    "airouter.in/zai/glm-5v-turbo"
+  ],
+  "hideThinkingBlock": false,
+  "terminal": {
+    "showTerminalProgress": true
+  },
+  "packages": [
+    "git:github.com/DietrichGebert/ponytail",
+    "npm:pi-web-access",
+    "npm:pi-lean-ctx",
+    "npm:pi-cache-graph",
+    "npm:pi-context-usage",
+    "git:github.com/yashdiniz/pi-provider-airouter-in"
+  ],
+  "images": {
+    "blockImages": true
+  },
+  "collapseChangelog": true,
+  "permissionMode": "ask",
+  "showCacheMissNotices": true
+}

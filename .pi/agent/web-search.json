@@ -1,0 +1,4 @@
+{
+  "provider": "google",
+  "model": "gemini-flash-lite-latest"
+}

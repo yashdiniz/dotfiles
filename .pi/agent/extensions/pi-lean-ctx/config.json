@@ -1,0 +1,7 @@
+{
+  "mode": "replace",
+  "enableMcp": true,
+  "toolProfile": "power",
+  "binary": "/home/yash/.cargo/bin/lean-ctx",
+  "env": { "LEAN_CTX_COMPRESSION": "standard" }
+}

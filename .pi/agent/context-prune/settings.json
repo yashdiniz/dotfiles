@@ -1,0 +1,9 @@
+{
+  "enabled": false,
+  "showPruneStatusLine": true,
+  "summarizerModel": "default",
+  "summarizerThinking": "off",
+  "pruneOn": "agentic-auto",
+  "remindUnprunedCount": true,
+  "batchingMode": "agent-message"
+}
