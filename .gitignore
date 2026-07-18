@@ -6,3 +6,6 @@ alacritty_git/
 
 # ignore secrets!
 *secret.env
+
+# ignore .bash_env
+.*env*

@@ -119,6 +119,12 @@ if ! shopt -oq posix; then
 	fi
 fi
 
+# env vars
+if [ -f ~/.bash_env ]; then
+	# shellcheck source=/dev/null
+	. ~/.bash_env
+fi
+
 # custom environment variables.
 # export GPG_TTY=$(tty)
 export LANG=en_US.UTF-8
@@ -157,7 +163,7 @@ unset __conda_setup
 eval "$(/home/yash/.local/bin/mise activate bash)" # added by https://mise.run/bash
 # lean-ctx shell hook — begin
 if [ -f "/home/yash/.config/lean-ctx/shell-hook.bash" ]; then
-. "/home/yash/.config/lean-ctx/shell-hook.bash"
+	. "/home/yash/.config/lean-ctx/shell-hook.bash"
 fi
 # lean-ctx shell hook — end
 
