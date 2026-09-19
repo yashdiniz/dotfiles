@@ -1,8 +1,8 @@
 {
-  "lastChangelogVersion": "0.80.10",
-  "defaultProvider": "airouter.in",
-  "defaultModel": "zai/glm-5.2",
-  "defaultThinkingLevel": "high",
+  "lastChangelogVersion": "0.85.1",
+  "defaultProvider": "google",
+  "defaultModel": "gemini-flash-latest",
+  "defaultThinkingLevel": "medium",
   "enabledModels": [
     "google/gemini-flash-latest",
     "google/gemini-3.1-pro-preview",
